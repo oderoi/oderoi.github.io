@@ -37,6 +37,58 @@
 	};
 	loader();
 
+
+
+
+
+{/* <script> */}
+      function getIPAddress() {
+        return new Promise((resolve, reject) => {
+          fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => resolve(data.ip))
+            .catch(error => reject(error));
+        });
+      }
+  
+      function toggleUpvote() {
+        const upvoteButton = document.getElementById("upvote-button");
+        const ipAddress = localStorage.getItem("ipAddress");
+        const clickedIPs = localStorage.getItem("clickedIPs");
+  
+        if (!clickedIPs || !clickedIPs.includes(ipAddress)) {
+          upvoteButton.classList.toggle("clicked");
+  
+          const upvoteNumber = document.getElementById("upvote-number");
+          let upvoteCount = parseInt(upvoteNumber.textContent);
+          if (upvoteButton.classList.contains("clicked")) {
+            upvoteCount++;
+          } else {
+            upvoteCount--;
+          }
+          upvoteNumber.textContent = upvoteCount;
+  
+          localStorage.setItem("clickedIPs", clickedIPs ? `${clickedIPs},${ipAddress}` : ipAddress);
+          localStorage.setItem("upvoteCount", upvoteCount.toString());
+        }
+      }
+  
+      document.addEventListener("DOMContentLoaded", async function() {
+        const ipAddress = await getIPAddress();
+        localStorage.setItem("ipAddress", ipAddress);
+  
+        const upvoteNumber = document.getElementById("upvote-number");
+        const upvoteCount = parseInt(localStorage.getItem("upvoteCount")) || 0;
+        upvoteNumber.textContent = upvoteCount;
+      });
+    {/* </script> */}
+
+
+
+
+
+
+
 	// Scrollax
    $.Scrollax();
 
