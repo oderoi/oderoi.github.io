@@ -4,7 +4,7 @@ comments: true
 title:  "Create Test Dataset for Machine Learning with Python"
 date:   2023-07-01 03:21:57
 excerpt: "One of the very important step when performing Machine Learning or so to speak Deep Learning is to prepare your Datasets starting by Spliting them into test, train, and validation test"
-categories: jekyll update
+categories: test set
 ---
 ## Test Set
 
