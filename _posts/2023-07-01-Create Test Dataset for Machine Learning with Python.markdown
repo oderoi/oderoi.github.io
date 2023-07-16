@@ -37,14 +37,14 @@ def split_train_test(data, test_ratio):
 {% endhighlight %}
 
 **So Basicaly**
-- this function take in `data` and `test ratio`, then calculate `random shuffling indexes` of our `dataset` using `np.random.permutation` then find `the size of our test set` by multipying `test ratio` and `length of our dataset` then use it to find the `indexes` of `train set` and `test set` then it uses those `indexes` to select `training set ` and `test set` datasets. 
+- this function take in **data** and **test ratio**, then calculate **random shuffling indexes** of our **dataset** using `np.random.permutation` then find **the size of our test set** by multipying **test ratio** and **length of our dataset** then use it to find the **indexes** of **train set** and **test set** then it uses those **indexes** to select **training set** and **test set** datasets. 
 
 {% highlight ruby %}
 train_set, test_set=split_train_test(data, 0.2)
 {% endhighlight %}
 
 **Then**
-- we call out function and pass in `datasets` and `test set ratio` then assign our output to `train_set` and `test_set`.
+- we call out function and pass in **datasets** and **test set ratio** then assign our output to **train_set** and **test_set**.
 
 - and then let see the length our datasets, here below.
 
@@ -64,10 +64,10 @@ print("Test set size: ",len(test_set))
 
 
 **now**
-- we can see that the `test set` is `4,128` which is actually `20%` of our total dataset which is `20,640` and our training set is `16,512` `80%` of our total datasets.
+- we can see that the **test set** is **4,128** which is actually **20%** of our total dataset which is **20,640** and our training set is **16,512** **80%** of our total datasets.
 
 Well, that works,...
-But it is not yet perfect, say if you run this program again it will break and generate new `test set` and `train set`.
+But it is not yet perfect, say if you run this program again it will break and generate new **test set** and **train set**.
 
 One way to solve this is to add random generator’s seed:
 
@@ -82,14 +82,14 @@ def split_train_test(data, test_ratio, random_seed):
 {% endhighlight %}
 
 **So Basicaly**
-- As before we create a function that take in `data` , `test ratio` and `random seed` which could be any number, then create the instance of a `Numpy` class `RandoState` with specified `rando seed` then `random shuffling` the total amount of our `dataset` using `permutation` then find `the size of our test set` by multipying `test ratio` and `length of our dataset` then use it to find the `indexes` of `train set` and `test set` then it uses those `indexes` to select `training set ` and `test set` datasets. 
+- As before we create a function that take in **data** , **test ratio** and **random seed** which could be any number, then create the instance of a `Numpy` class **RandoState** with specified **random seed** then **random shuffling** the total amount of our **dataset** using **permutation** then find **the size of our test set** by multipying **test ratio** and **length of our dataset** then use it to find the **indexes** of **train set** and **test set** then it uses those **indexes** to select **training set** and **test set** datasets. 
 
 {% highlight ruby %}
 train_set, test_set=split_train_test(data, 0.2, 42)
 {% endhighlight %}
 
 **Then**
-- we call again out function and pass in `datasets` , `test set ratio` and `random seed` then assign our output to `train_set` and `test_set`.
+- we call again out function and pass in **datasets** , **test set ratio** and **random seed** then assign our output to **train_set** and **test_set**.
 
 It worth noting that, this above function can be done simply by using sklearn.
 
@@ -104,9 +104,9 @@ train_set, test_set=train_test_split(data, test_size=0.2, random_state=42, shuff
 {% endhighlight %}
 
 **So Basicaly**
-- This function takes in `data` , `test size ratio` , `random state` and you can choose if you want to `shuffle` your `datasets` or not bu assigning `True` or `False` to `shuffle` then it give out `train set` and `test set` datasets. 
+- This function takes in **data** , **test size ratio** , **random state** and you can choose if you want to **shuffle** your **datasets** or not bu assigning **True** or **False** to **shuffle** then it give out **train set** and **test set** datasets. 
 
-**Now** By adding `random seed` our program will not break when we run this code again, but when I fetch an update dataset, my code will breaks as well and generate new `test set` and `train sets`.
+**Now** By adding **random seed** our program will not break when we run this code again, but when I fetch an update dataset, my code will breaks as well and generate new **test set** and **train sets**.
 
 ### So what is the solution then
 One way to solve this is by using identifier of each data point or instance to decide whether or not it should go to test or train set.
