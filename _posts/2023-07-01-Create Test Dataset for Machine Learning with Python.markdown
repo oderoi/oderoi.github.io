@@ -19,17 +19,24 @@ import numpy as np
 {% endhighlight %}
 
 {% highlight ruby %}
-#create a function `split_train_test` that take datasets and ration of a test set as input and give training and test datasets as output
+#create a function `split_train_test`,
+#that take datasets and ration of a test 
+#set as input and give training and test 
+#datasets as output
 
 def split_train_test(data, test_ratio):
-  #use permutation to arrange the total number of your dataset into a random order
+
+  #use permutation to arrange the total number 
+  #of your dataset into a random order
   shuffle_index=np.random.permutation(len(data))
-  
+
   test_set_size=int(test_ration*len(data))
   test_index=shuffled_index[:test_set_size]
   train_index=shuffled_index[test_set_size:]
   return data.iloc[train_index], data.iloc[test_index]
 {% endhighlight %}
+
+<img src="/assets/scorpion.jpg">- Basically what we did here is we create our function that take in
 
 {% highlight ruby %}
 train_set, test_set=split_train_test(data, 0.2)
