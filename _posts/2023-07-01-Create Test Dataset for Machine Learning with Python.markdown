@@ -8,12 +8,13 @@ categories: test set
 ---
 ## Test Set
 
-Splitting datasets into train set and test set is one of the common steps in machine learning perhaps now.
+Splitting datasets into train set and test set is one of the common steps in machine learning, perhaps now.
 
-Splitting data theoretically is so simple, you just need to put away 20% of your datasets as test set, even less if your dataset is too large and remaining datasets be training set.
+Splitting data theoretically is so simple, you just need to put away 20% of your datasets as test set, or even less if your dataset is too large and remaining datasets would be training set.
 
-Let us implement this using python code:
+Let us implement this using python:
 {% highlight ruby %}
+#import numpy ribraly
 import numpy as np
 {% endhighlight %}
 
