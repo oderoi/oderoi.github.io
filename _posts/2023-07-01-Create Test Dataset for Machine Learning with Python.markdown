@@ -179,3 +179,96 @@ So, if you have small datasets the go to way is to perform Stratified sampling.
 In Stratified Sampling the datasets are divided into homogeneous subgroups called Strata.
 
 Now using Strata, the right number instances will be sampled from each Stratum to guarantee that the test set is representative of overall dataset.
+
+Good thing is, Spliting our datasets using Stratified Sampling can be done easirly using sklearn class `StratifiedShuffleSplit` cross-validator.
+
+**Ok**
+- So this cross-validator object is the  combination of StratifiedKFold and ShuffleSplit, which returns Stratified randomized folds. The folds are made by preserving the percentage of samples for each class.
+
+**Not**
+- This methode is for sizeable / small datasets.
+
+So here is the emplementation
+
+{% highlight ruby %}
+#from model_selection import StratifiedShuffleSplit
+from sklearn.model_selection import StratifiedShuffleSplit
+
+split=StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+
+for index, (train_index, test_index) in enumerate(split.split(data, data[important_categorical_attribute])):
+    start_train_set=data.loc[train_index]
+
+    trat_test_set=data.loc[test_index]
+{% endhighlight %}
+
+**Ok**
+- Now will this work for every scinario in our datasets, sadly **No**.
+
+In our `for loop` remember we use `data[important_categorical_attribute]`.
+**So what do we mean by important_categorical_attribute**
+- In our datasets we have to look for the attribute that is very important to predict the output, hence `data[important_categorical_attribute]`
+
+-But that attribute it need to be **categorical attribute**.
+
+Now what if in our datasets there is no important categorical attribute.
+
+In this case, we will have to create **categorical attribute** from very important attribute to predict the output.
+
+**So here is how will we do it**
+- So first is to identify how is your **continues sttribute** clustered.
+- Here you may use normal observation by visualizing your attribute.
+
+{% highlight ruby %}
+    data[continues_attribute].hist()
+{% endhighlight %}
+
+So from the histogram you may decide how many clusters is your data
+Eg: 
+- you may see maybe your **continues_attribute** is clustered around 1.5 to 6 maybe so it's like category 1 is `0. - 1.5`, category 2 is `1.5 - 3.0`, category 3 is `3.0 - 4.5`, category 4 is `4.5 - 6.0` and category 5 is `6.0 - `
+
+**Now lt's create our categorical attribute**
+We will use a function `cut` from `pandas` to segment and sort data values into `bins`, so by doing that we will be able to convert continous attribute to categorical attribute.
+
+{% highlight ruby %}
+#first import pandas as pd
+import pandas as pd
+
+#then use pd.cut to segment the continous data into `bins` and then give each categories a label
+data[categorical_attribute] = pd.cut(data[continues_attribute], bins=[0., 1.5, 3.0, 4.5, 6., np.inf], labels=[1, 2, 3, 4, 5])
+
+#then you can visualize your categorical data using `hist`
+data[categorical_attribute].hist()
+{% endhighlight %}
+
+**Now** that our `continous attribute` is converted into `categorical attirbute` we can use this attribute into our sklearn class `StratifiedShuffleSplit` `for loop` above.
+
+**Also** with the test set genarated with random sampling (test_set) and StratifiedSampling (strat_test_set), if we compare the income category of test_set, strat_test_set and overall dataste we supporse to see that test_set set generate with Stratified Sampling proportions almost identicle to those of full dataset, while test set generate with Random Sampling is bit skewed.
+
+**Let see then**
+
+{% highlight ruby %}
+strat_train_set[categorical_attribute].value_counts()/ len(strat_train_set)
+{% endhighlight %}
+
+{% highlight ruby %}
+data[categorical_attribute].value_counts()/ len(strat_train_set)
+{% endhighlight %}
+
+{% highlight ruby %}
+from sklearn.models import train_test_split
+train,test=train_test_split(data, test_size=0.2, random_state=42, shuffle=True)
+train[categorical_attribute].value_counts()/len(test)
+{% endhighlight %}
+
+**Last but not Least** we will have to drop `categorical_attribute` from our Stratified Sampling train and test datasets so that our data will return to it's original **attirbutes**.
+
+{% highlight ruby %}
+#here we will drop `attr` from `start_train_set` and `strat_test_set`
+attr=[categorical_attribute]
+
+for _set in (strat_train_set, strat_test_set):
+    _set.drop(attr, axis=1, inplace=True)
+{% endhighlight %}
+
+**Now** our datasets will be ready for **training**
