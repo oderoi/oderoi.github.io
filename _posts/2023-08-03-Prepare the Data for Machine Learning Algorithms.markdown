@@ -34,23 +34,41 @@ after doing these two things we will be working with iour new `train_set`.
 ### Data Cleaning
 Most of machine Learning can not work with missing features, so you have to create few functions to take of them. You have three options here:
  - Get rid of the corresponding missing values in the `dataset attribute` row.
-
        
     ```Python
-    train_set.dropna(subset=['`attribute name`'])
-    ```
-       
-
+    train_set.dropna(subset=['attribute name'])
+    ``` 
  - Get rid of the whole `attribute` in your dataset.
 
     ```Python
-    train_set.drop('`attribute name`', axis=1)
+    train_set.drop('attribute name', axis=1)
     ```
-
-
  - Set the values to some value (zero, them mean, the median, etc.)
 
     ```Python
-        median=train_set['`attribute name`'].median()
-        train_set['`attribute name`'].fillna(median, inplace=True)
+        median=train_set['attribute name'].median()
+        train_set['attribute name'].fillna(median, inplace=True)
     ```
+
+The median computed must be saved so that it can be used latter in `test set` and even new datasets to fill all the nall values.
+
+***sklean*** provide class `SimpleImputer` to help us perform the `fillnal` easily.
+
+```python
+#import SimpleImputer class
+ from sklearn.import SimpleImputer
+
+ simple_imputer = SimpleImputer(strategy = 'median)
+
+```
+Since `SimpleImputer` can only work with numerical data, we have to remove any attribute from our dataset that is not numerical.
+
+```python
+ train_set_num= train_set.drop('numerical_attribute name', axis=1)
+```
+
+Now we will have to fit the `simple_imputer` instance to the training dataset using `fit()` method
+
+```python
+ simple_imputer.fit(train_set_num)
+```
