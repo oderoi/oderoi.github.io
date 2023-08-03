@@ -54,13 +54,13 @@ Most of machine Learning can not work with missing features, so you have to crea
 
 The median computed must be saved so that it can be used latter in `test set` and even new datasets to fill all the nall values.
 
-***sklean*** provide class `SimpleImputer` to help us perform the `fillnal` easily.
+**sklean** provide class `SimpleImputer` to help us perform the `fillnal` easily.
 
 ```python
 #import SimpleImputer class
  from sklearn.import SimpleImputer
 
- simple_imputer = SimpleImputer(strategy = 'median)
+ simple_imputer = SimpleImputer(strategy = 'median')
 
 ```
 Since `SimpleImputer` can only work with numerical data, we have to remove any attribute from our dataset that are non numerical attributes like categorical data or text data.
