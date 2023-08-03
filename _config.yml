@@ -23,9 +23,9 @@ email: odero@nileagi.com
 description: >- # this means to ignore newlines until "baseurl:"
   I love to train Deep Neural Network using tiny datasets.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://odero_i.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://oderoi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: odero_i
-github_username:  odero-i
+github_username:  oderoi
 
 # Build settings
 theme: minima
