@@ -32,16 +32,15 @@ So before doing anything with your datasets we first have to do two things first
 after doing these two things we will be working with iour new `train_set`.
 
 ### Data Cleaning]
-Most of machine Learning can not work with missing features, so you have to create few functions to take of them. You have three options here:
+- Most of machine Learning can not work with missing features, so you have to create few functions to take of them. You have three options here:
     - Get rid of the corresponding missing values in the `dataset attribute` row.
         {% highlight ruby %}
-            train_set.dropna(subset=['`attribute name`
-        '])
+         train_set.dropna(subset=['attribute name'])
         {% endhighlight %}
 
     - Get rid of the whole `attribute` in your dataset.
         {% highlight ruby %}
-            train_set.drop('`attribute name`', axis=1)
+         train_set.drop('attribute name', axis=1)
         {% endhighlight %}
 
     - Set the values to some value (zero, them mean, the median, etc.)
