@@ -45,6 +45,6 @@ after doing these two things we will be working with iour new `train_set`.
 
     - Set the values to some value (zero, them mean, the median, etc.)
         {% highlight ruby %}
-            median=train_set['`attribute name`'].median()
-            train_set['`attribute name`'].fillna(median, inplace=True)
+         median=train_set['attribute name'].median()
+         train_set['attribute name'].fillna(median, inplace=True)
         {% endhighlight %}
