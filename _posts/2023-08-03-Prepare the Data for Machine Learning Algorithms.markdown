@@ -9,7 +9,7 @@ categories: Unlocking the full potential of Machine Learning, Mastering the Art 
 
 So before doing anything with your datasets we first have to do two things first.
 - Split your datasets into train set and test set.
-  {% highlight ruby %}
+ ```python
     #from `model_selection` module inside `sklearn` import `train_test_split` function
     from sklearn.model_selection import train_test_split
 
@@ -18,16 +18,16 @@ So before doing anything with your datasets we first have to do two things first
     #and lastly decide weither you will `shuffle` them or not.
     
     train_set, test_set = train_test_split(`datasets`, test_size=0.2, random_state=42, shuffle=True)
-  {% endhighlight %}
+  ```
 
 - Take Train set and separate the labels from your datasets since we don't want to apply the same transformations to the labels and Train set
-  {% highlight ruby %}
+  ```Python
     #here we drop the output attribute which you will decide from your datasets
     #then we make a copy of it to `train_set_label`
 
-    train_set= train_set.drop(`your_output_attribute name`, axis=1)
-    train_set_label=strat_train_set[`your_output_attribute name`].copy()
-  {% endhighlight %}
+    train_set= train_set.drop('`your_output_attribute name`', axis=1)
+    train_set_label=strat_train_set['`your_output_attribute name`'].copy()
+  ```
 
 after doing these two things we will be working with iour new `train_set`.
 
@@ -37,20 +37,20 @@ Most of machine Learning can not work with missing features, so you have to crea
 
        
     ```Python
-    train_set.dropna(subset=['attribute name'])
+    train_set.dropna(subset=['`attribute name`'])
     ```
        
 
  - Get rid of the whole `attribute` in your dataset.
 
     ```Python
-    train_set.drop('attribute name', axis=1)
+    train_set.drop('`attribute name`', axis=1)
     ```
 
 
  - Set the values to some value (zero, them mean, the median, etc.)
 
     ```Python
-        median=train_set['attribute name'].median()
-        train_set['attribute name'].fillna(median, inplace=True)
+        median=train_set['`attribute name`'].median()
+        train_set['`attribute name`'].fillna(median, inplace=True)
     ```
