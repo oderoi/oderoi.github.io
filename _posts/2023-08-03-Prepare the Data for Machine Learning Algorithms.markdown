@@ -61,10 +61,10 @@ The median computed must be saved so that it can be used latter in `test set` an
  simple_imputer = SimpleImputer(strategy = 'median)
 
 ```
-Since `SimpleImputer` can only work with numerical data, we have to remove any attribute from our dataset that is not numerical.
+Since `SimpleImputer` can only work with `numerical data`, we have to remove any attribute from our dataset that are `non numerical attributes` like `categorical data` or `text data`.
 
 ```python
- train_set_num= train_set.drop('numerical_attribute name', axis=1)
+ train_set_num= train_set.drop('categorical_attribute name', axis=1)
 ```
 
 Now we will have to fit the `simple_imputer` instance to the training dataset using `fit()` method
@@ -72,3 +72,54 @@ Now we will have to fit the `simple_imputer` instance to the training dataset us
 ```python
  simple_imputer.fit(train_set_num)
 ```
+**SimpleIMputer** class simply is calculating the median of the numerical instance of the whole dataset and store it in `statistic_instance`
+We really don't know which attribute in our datasets will have the `nall` values, so we have to apply `simple_imputer` to apply the whole datasets.
+
+```python
+#to see your median values just call `statistic_` instance variable
+simple_imputer.statistics_
+```
+Now you can use the trained imputer `simple_imputer` to transform the training set by replacing missing values ny the learned medians.
+
+```python
+  X=simple_imputer.transform(train_set_num)
+```
+
+The result of the transformed feature is the plain `Numpy Array`, to convert it back to `Pandas` use `Pandas DataFrame` considering our datasets were on the `Pandas DataFrame`.
+
+```python
+import pandas as pd
+ train_set_tr=pd.DataFrame(X, columns=train_set_num.columns)
+```
+
+You can take a quick look of your datasets to see if there is any `nall` valus remaining
+
+```python
+  train_set_tr.info()
+```
+
+### Handling Text and Categorical Attributes
+Previously we say that we have to drop any `categorical attribute` in our datasets because we can not compute median in the categorical datasets.
+
+to take a look of this categorical attribute jus do
+```python
+ train_set_cat=train-set[['categorical_attribute name']]
+
+ #try to view first five row
+ train_set_cat.head()
+```
+
+Machine Learning does not understand the `categorical data`, so we have to convert our `categoricak data` to `numerical data`.
+
+Using class `OrdinalEncoder`from the `sklean.preprocessing` we can accoplish that.
+```python
+ from sklearn.preprocessing import OrdinalEncoder
+ 
+ #define the instance of the class 
+ ordinal_encoder = OrdinalEncoder()
+
+ #encode the categorical data by fit_transform the ordinal_encoder in our train_set_cat data
+ train_set_cat_encoded = ordinal_encoder.fit_transform(train_set_cat)
+```
+
+**fit_transform** it first use `fit` to analyse `train_set_cat` and convert all the `categorical data` to `numerical data` and then `transform` do apply the learned new `numerical data` to our `train_set_cat` data.
