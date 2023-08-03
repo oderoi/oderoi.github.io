@@ -153,3 +153,8 @@ onehot_encoder.categories_
 ```
 
 ### Feature Scalling
+Machine Learning Algorithm with few exception do not perform well when numeric attributes have different data scales, So one of the very important feature transformation you need to add to your data is **feature scaling**, there are two way to do feature scalling,
+    - min-max scaling
+    - standardization
+
+**Min-max scalling** shift and rescale the values in the range of 0 to 1, you can do this by substracting min value and dividing by the max minus the min.
