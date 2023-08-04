@@ -157,4 +157,22 @@ Machine Learning Algorithm with few exception do not perform well when numeric a
     - min-max scaling
     - standardization
 
-**Min-max scalling** shift and rescale the values in the range of 0 to 1, you can do this by substracting min value and dividing by the max minus the min.
+**Min-max scalling** shift and rescale the values in the range of 0 to 1, you can do this by substracting min value and dividing by the max minus the min.*Scikit-Learn* provide a transformer called `MinMaxScaler` which consist of `feature_range` hyperparameter that let you change if you don't want 0 - 1 for some reasons.
+
+**Standardization** have quit different approach, first it substract mean to make the standardize value always have zero mean, then divide with standard devition so that the standardize value distribution have unit variance, unlike Mini-Max scaling standardization do not bound values to specific range which can be a problem to Neural network where they expert input value range from 0 to 1, however Standardization is much less affected by outliers.
+
+**sklearn**provides a transformer called `StandardScaler` and `MinMaxScaler`.
+
+### Transformation Pipeline
+
+As you have seen there are many transformations steps that need to exceuted in right order, ***Scikit-Learn*** provide the **Pipeline** class to help combine these different transformations process for numerical attributes.
+
+```python
+ from sklearn.preprocessing import StandardScaler, MiniMaxScaler
+ from sklearn.impute import SimpleImputer
+
+ numeric_pipeline= Pipeline([
+    ('imputer'), SimpleImputer(strategy='median'),
+    ('standard_scaler', StandardScaller()),
+ ])
+```
