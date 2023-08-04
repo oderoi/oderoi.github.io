@@ -207,3 +207,5 @@ The ***train_set_prepared*** is a numpy array read to be used to train Machine L
  #you can view first 5 row of our datasets
  train_set_prepared[:5]
 ```
+
+***Now*** our datasets will be ready for ***training*** Machine Learning Algorithm
