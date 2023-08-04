@@ -27,14 +27,14 @@ So before doing anything with your datasets we first have to do two things first
     #here we drop the output attribute which you will decide from your datasets
     #then we make a copy of it to `train_set_label`
 
-    train_set= train_set.drop('`your_output_attribute name`', axis=1)
-    train_set_label=strat_train_set['`your_output_attribute name`'].copy()
+    train_set= train_set.drop('your_output_attribute name', axis=1)
+    train_set_label=strat_train_set['your_output_attribute name'].copy()
   ```
 
-after doing these two things we will be working with iour new `train_set`.
+after doing these two things we will be working with our new `train_set`.
 
 ### Data Cleaning
-Most of machine Learning can not work with missing features, so you have to create few functions to take of them. You have three options here:
+Most of machine Learning can not work with missing features, so you have to create few functions to take care of them. You have three options here:
  - Get rid of the corresponding missing values in the dataset attribute row.
        
     ```Python
