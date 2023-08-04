@@ -176,3 +176,10 @@ As you have seen there are many transformations steps that need to exceuted in r
     ('standard_scaler', StandardScaller()),
  ])
 ```
+**Remember** We said `SimpleImputer` only work with numerical data and we have remove any categorical attribute from our dataset.
+
+```python
+ train_set_num= train_set.drop('categorical_attribute name', axis=1)
+
+ train_set_tranform = numeric_pipeline.fit_transform(train_set_num)
+```
