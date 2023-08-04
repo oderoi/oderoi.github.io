@@ -184,4 +184,19 @@ As you have seen there are many transformations steps that need to exceuted in r
  train_set_tranform = numeric_pipeline.fit_transform(train_set_num)
 ```
 
-So far we have handled categorical columns and numeriacl columns separately, It would have been more convinient to have the single transformer to handle all collumns and applying appropiate transformation to each column, Scikit-Learn introduce ***ColumnTransformer*** for that purpose and it can work with Pandas Dataframe.
+So far we have handled categorical columns and numeriacl columns separately, It would have been more convinient to have the single transformer to handle all collumns and applying appropiate transformation to each column, Scikit-Learn introduce ***ColumnTransformer*** class for that purpose and it can work with Pandas Dataframe.
+```python
+ from sklearn.compose import ColumnTransformer
+ from sklearn.preprocessing import StandardScaler, OneHotEncoder
+ from sklearn.impute import SimpleImputer 
+
+ numeric_attributes = list(train_set_num)
+ categorical_attributes = ['categorical_attribute name']
+
+ full_pipeline = ColumnTransfromer([
+    ('numerical', numeric_pipeline, numeric_attributes),
+    ('categorical', OneHotEncoder(), categorical_attributes)
+ ])
+
+ train_set_prepared = full_pipeline.fit_tarnform(train_set)
+```
