@@ -200,3 +200,10 @@ So far we have handled categorical columns and numeriacl columns separately, It 
 
  train_set_prepared = full_pipeline.fit_tarnform(train_set)
 ```
+
+The ***train_set_prepared*** is a numpy array read to be used to train Machine Learning Algorithm
+
+```python
+ #you can view first 5 row of our datasets
+ train_set_prepared[:5]
+```
