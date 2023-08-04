@@ -19,8 +19,8 @@ So before doing anything with your datasets we first have to do two things first
     #and lastly decide weither you will `shuffle` them or not.
     
     train_set, test_set = train_test_split(`datasets`, test_size=0.2, random_state=42, shuffle=True)
-  ```
-
+ ```
+ 
 - Take Train set and separate the labels from your datasets since we don't want to apply the same transformations to the labels and Train set.
 
   ```Python
