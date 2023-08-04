@@ -45,7 +45,7 @@ Most of machine Learning can not work with missing features, so you have to crea
     ```Python
     train_set.drop('attribute name', axis=1)
     ```
- - Set the values to some value (zero, mean, median, etc.)
+ - Set the values to some value like (zero, mean, median, etc.)
 
     ```Python
         median=train_set['attribute name'].median()
