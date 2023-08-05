@@ -10,7 +10,7 @@ categories: Unlocking the full potential of Machine Learning, Mastering the Art 
 So before doing anything with your datasets we first have to do two things first.
 : Split your datasets into train set and test set.
 
-  ```python
+: ```python
     #from `model_selection` module inside `sklearn` import `train_test_split` function
     from sklearn.model_selection import train_test_split
 
@@ -23,7 +23,7 @@ So before doing anything with your datasets we first have to do two things first
  
 : Take Train set and separate the labels from your datasets since we don't want to apply the same transformations to the labels and Train set.
 
-  ```Python
+: ```Python
     #here we drop the output attribute which you will decide from your datasets
     #then we make a copy of it to `train_set_label`
 
@@ -35,17 +35,17 @@ after doing these two things we will be working with our new `train_set`.
 
 ### Data Cleaning
 Most of machine Learning can not work with missing features, so you have to create few functions to take care of them. You have three options here:
- : Get rid of the corresponding missing values in the dataset attribute row.
+: Get rid of the corresponding missing values in the dataset attribute row.
        
     ```Python
     train_set.dropna(subset=['attribute name'])
     ``` 
- : Get rid of the whole `attribute` in your dataset.
+: Get rid of the whole `attribute` in your dataset.
 
     ```Python
     train_set.drop('attribute name', axis=1)
     ```
- : Set the values to some value like (zero, mean, median, etc.)
+: Set the values to some value like (zero, mean, median, etc.)
 
     ```Python
         median=train_set['attribute name'].median()
