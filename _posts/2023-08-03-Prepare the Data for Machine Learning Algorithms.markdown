@@ -8,7 +8,7 @@ categories: Unlocking the full potential of Machine Learning, Mastering the Art 
 ---
 
 So before doing anything with your datasets we first have to do two things first.
-- Split your datasets into train set and test set.
+: Split your datasets into train set and test set.
 
   ```python
     #from `model_selection` module inside `sklearn` import `train_test_split` function
@@ -21,7 +21,7 @@ So before doing anything with your datasets we first have to do two things first
     train_set, test_set = train_test_split(`datasets`, test_size=0.2, random_state=42, shuffle=True)
   ```
  
-- Take Train set and separate the labels from your datasets since we don't want to apply the same transformations to the labels and Train set.
+: Take Train set and separate the labels from your datasets since we don't want to apply the same transformations to the labels and Train set.
 
   ```Python
     #here we drop the output attribute which you will decide from your datasets
@@ -35,17 +35,17 @@ after doing these two things we will be working with our new `train_set`.
 
 ### Data Cleaning
 Most of machine Learning can not work with missing features, so you have to create few functions to take care of them. You have three options here:
- - Get rid of the corresponding missing values in the dataset attribute row.
+ : Get rid of the corresponding missing values in the dataset attribute row.
        
     ```Python
     train_set.dropna(subset=['attribute name'])
     ``` 
- - Get rid of the whole `attribute` in your dataset.
+ : Get rid of the whole `attribute` in your dataset.
 
     ```Python
     train_set.drop('attribute name', axis=1)
     ```
- - Set the values to some value like (zero, mean, median, etc.)
+ : Set the values to some value like (zero, mean, median, etc.)
 
     ```Python
         median=train_set['attribute name'].median()
@@ -154,8 +154,8 @@ onehot_encoder.categories_
 
 ### Feature Scalling
 Machine Learning Algorithm with few exception do not perform well when numeric attributes have different data scales, So one of the very important feature transformation you need to add to your data is **feature scaling**, there are two way to do feature scalling,
-    - min-max scaling
-    - standardization
+    : min-max scaling
+    : standardization
 
 **Min-max scalling** shift and rescale the values in the range of 0 to 1, you can do this by substracting min value and dividing by the max minus the min.*Scikit-Learn* provide a transformer called `MinMaxScaler` which consist of `feature_range` hyperparameter that let you change if you don't want 0 - 1 for some reasons.
 
