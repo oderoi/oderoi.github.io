@@ -10,7 +10,7 @@ categories: Unlocking the full potential of Machine Learning, Mastering the Art 
 So before doing anything with your datasets we first have to do two things first.
 - Split your datasets into train set and test set.
 
- ```python
+  ```python
     #from `model_selection` module inside `sklearn` import `train_test_split` function
     from sklearn.model_selection import train_test_split
 
@@ -19,7 +19,7 @@ So before doing anything with your datasets we first have to do two things first
     #and lastly decide weither you will `shuffle` them or not.
     
     train_set, test_set = train_test_split(`datasets`, test_size=0.2, random_state=42, shuffle=True)
- ```
+  ```
  
 - Take Train set and separate the labels from your datasets since we don't want to apply the same transformations to the labels and Train set.
 
