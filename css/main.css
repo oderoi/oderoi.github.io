@@ -28,8 +28,8 @@ a:visited { color: #205caa; }
 .wrap:after { content:""; display:table; }
 .wrap:after { clear: both; }
 .wrap {
-  max-width: 500px;
-  padding: 0 30px;
+  max-width: 600px;
+  padding: 0 0;
   margin: 0 auto;
   zoom: 1;
 }
