@@ -5,4 +5,4 @@ permalink: /about/
 includelink: true
 ---
 
-I am Reseacher at NileAGI, and I love to train Deep Neural Networks in tiny datasets.
+I am an Artificial Intelligence Reseacher at NileAGI, and I love to train Deep Neural Networks in tiny datasets.
