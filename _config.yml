@@ -1,0 +1,19 @@
+# Site settings
+title: Isaac Odero blog
+email: "oderoi@nileagi.com"
+description: "Making CPU Go zzz..."
+baseurl: ""
+url: "https://oderoi.github.io"
+twitter_username: oderoi_
+github_username:  oderoi
+linkedin_username: oderoi
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
