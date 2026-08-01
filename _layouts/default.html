@@ -5,17 +5,18 @@
 
     <body>
 
-        {% include header.html %}
+    <button id="theme-toggle" title="Toggle dark mode">🌙</button>
 
-        <div class="page-content">
-        <div class="wrap">
-        {{ content }}
-        </div>
-        </div>
+    {% include header.html %}
 
-        {% include footer.html %}
+    <div class="page-content">
+      <div class="wrap">
+      {{ content }}
+      </div>
+    </div>
 
-        <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+    {% include footer.html %}
 
+    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
     </body>
 </html>

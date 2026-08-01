@@ -451,32 +451,8 @@ body {
 
 
 /* ============================================
-   MOBILE MENU
+   THEME TOGGLE BUTTON
    ============================================ */
-.site-nav .trigger {
-    display: none;
-}
-.site-nav.nav-open .trigger {
-    display: block;
-}
-
-/* ============================================
-   DARK MODE
-   ============================================ */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-}
-body.dark-mode .site-header,
-body.dark-mode .site-footer {
-    background-color: #222;
-    border-color: #333;
-}
-body.dark-mode a {
-    color: #66b3ff;
-}
-
-/* Dark mode toggle button */
 #theme-toggle {
     position: fixed;
     top: 15px;
@@ -486,14 +462,83 @@ body.dark-mode a {
     color: #fff;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 42px;
+    text-align: center;
+    padding: 0;
+    transition: background 0.2s;
+}
+#theme-toggle:hover {
+    background: #555;
 }
 
 /* ============================================
-   BACK TO TOP
+   DARK MODE STYLES
+   ============================================ */
+body.dark-mode {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+body.dark-mode .site-header {
+    background-color: #16213e;
+    border-bottom: 1px solid #0f3460;
+}
+body.dark-mode .site-footer {
+    background-color: #16213e;
+    border-top: 1px solid #0f3460;
+}
+body.dark-mode a {
+    color: #66b3ff;
+}
+body.dark-mode a:hover {
+    color: #99ccff;
+}
+body.dark-mode .page-content {
+    background-color: #1a1a2e;
+}
+body.dark-mode .wrap {
+    background-color: #1a1a2e;
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+.trigger {
+    display: block;
+}
+@media screen and (max-width: 600px) {
+    .trigger {
+        display: none;
+        clear: both;
+        padding-top: 10px;
+    }
+    .trigger.nav-open {
+        display: block;
+    }
+    .trigger a {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+    body.dark-mode .trigger a {
+        border-bottom-color: #333;
+    }
+    .site-nav {
+        float: none;
+        text-align: right;
+    }
+    .menu-icon {
+        display: block;
+        float: right;
+        padding: 8px;
+    }
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
    ============================================ */
 #back-to-top {
     position: fixed;
@@ -506,11 +551,14 @@ body.dark-mode a {
     border-radius: 50%;
     width: 45px;
     height: 45px;
-    font-size: 20px;
+    font-size: 22px;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s, visibility 0.3s, background 0.2s;
+    line-height: 45px;
+    text-align: center;
+    padding: 0;
 }
 #back-to-top.visible {
     opacity: 1;
@@ -518,4 +566,10 @@ body.dark-mode a {
 }
 #back-to-top:hover {
     background: #555;
+}
+body.dark-mode #back-to-top {
+    background: #0f3460;
+}
+body.dark-mode #back-to-top:hover {
+    background: #1a4a7a;
 }
