@@ -502,14 +502,44 @@ body.dark-mode .page-content {
 body.dark-mode .wrap {
     background-color: #1a1a2e;
 }
+body.dark-mode .post-date {
+    color: #aaa;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #e0e0e0;
+}
+body.dark-mode code {
+    background-color: #2d2d44;
+    color: #e0e0e0;
+}
+body.dark-mode pre {
+    background-color: #2d2d44;
+    border-color: #0f3460;
+}
 
 /* ============================================
    MOBILE MENU
    ============================================ */
+.menu-icon {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: none;
+}
 .trigger {
     display: block;
 }
 @media screen and (max-width: 600px) {
+    .menu-icon {
+        display: block;
+        float: right;
+    }
     .trigger {
         display: none;
         clear: both;
@@ -530,10 +560,10 @@ body.dark-mode .wrap {
         float: none;
         text-align: right;
     }
-    .menu-icon {
-        display: block;
-        float: right;
-        padding: 8px;
+    /* Move theme toggle to avoid overlap with menu button */
+    #theme-toggle {
+        top: 15px;
+        right: 60px;
     }
 }
 

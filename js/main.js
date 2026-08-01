@@ -9,7 +9,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            navMenu.classList.toggle('nav-open');
+            const isOpen = navMenu.classList.toggle('nav-open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('nav-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     }
 
@@ -42,13 +51,21 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTop.id = 'back-to-top';
     backToTop.innerHTML = '↑';
     backToTop.title = 'Back to top';
+    backToTop.setAttribute('aria-label', 'Back to top');
     document.body.appendChild(backToTop);
 
+    let ticking = false;
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 
