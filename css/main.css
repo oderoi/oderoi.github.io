@@ -451,28 +451,129 @@ body {
 
 
 /* ============================================
-   THEME TOGGLE BUTTON
+   THEME TOGGLE BUTTON (inside header)
    ============================================ */
 #theme-toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1000;
-    background: #333;
-    color: #fff;
+    background: transparent;
+    color: #333;
     border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
     cursor: pointer;
     font-size: 20px;
-    line-height: 42px;
-    text-align: center;
-    padding: 0;
-    transition: background 0.2s;
+    line-height: 1;
+    padding: 4px 8px;
+    margin-left: 12px;
+    vertical-align: middle;
+    transition: transform 0.2s;
 }
 #theme-toggle:hover {
-    background: #555;
+    transform: scale(1.15);
+}
+body.dark-mode #theme-toggle {
+    color: #e0e0e0;
+}
+
+/* ============================================
+   MOBILE MENU BUTTON — no background
+   ============================================ */
+.menu-icon {
+    background: none;
+    border: none;
+    padding: 4px;
+    margin: 0;
+    cursor: pointer;
+    display: none;
+    vertical-align: middle;
+}
+.menu-icon svg {
+    display: block;
+    width: 22px;
+    height: 18px;
+}
+.menu-icon:focus {
+    outline: 2px solid #66b3ff;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ============================================
+   NAV LAYOUT (desktop vs mobile)
+   ============================================ */
+.site-nav {
+    float: right;
+    line-height: 56px;
+}
+.trigger {
+    display: inline-block;
+    vertical-align: middle;
+}
+.trigger a {
+    margin-left: 16px;
+}
+
+/* Desktop: theme toggle sits right next to About */
+@media screen and (min-width: 601px) {
+    .site-nav {
+        display: flex;
+        align-items: center;
+    }
+    .trigger {
+        display: inline-block !important;
+    }
+}
+
+/* Mobile: hamburger + toggle side by side, no overlap */
+@media screen and (max-width: 600px) {
+    .site-nav {
+        float: right;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .menu-icon {
+        display: block;
+        order: 2;
+    }
+    #theme-toggle {
+        display: block;
+        order: 1;
+        margin-left: 0;
+        padding: 4px;
+    }
+    .trigger {
+        display: none;
+        position: absolute;
+        top: 56px;
+        right: 20px;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 4px;
+        padding: 8px 16px;
+        min-width: 140px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+    .trigger.nav-open {
+        display: block;
+    }
+    .trigger a {
+        display: block;
+        padding: 8px 0;
+        margin-left: 0;
+        border-bottom: 1px solid #eee;
+        line-height: 1.5;
+    }
+    .trigger a:last-child {
+        border-bottom: none;
+    }
+    body.dark-mode .trigger {
+        background: #16213e;
+        border-color: #0f3460;
+    }
+    body.dark-mode .trigger a {
+        border-bottom-color: #0f3460;
+        color: #e0e0e0;
+    }
 }
 
 /* ============================================
@@ -520,51 +621,6 @@ body.dark-mode code {
 body.dark-mode pre {
     background-color: #2d2d44;
     border-color: #0f3460;
-}
-
-/* ============================================
-   MOBILE MENU
-   ============================================ */
-.menu-icon {
-    background: none;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    display: none;
-}
-.trigger {
-    display: block;
-}
-@media screen and (max-width: 600px) {
-    .menu-icon {
-        display: block;
-        float: right;
-    }
-    .trigger {
-        display: none;
-        clear: both;
-        padding-top: 10px;
-    }
-    .trigger.nav-open {
-        display: block;
-    }
-    .trigger a {
-        display: block;
-        padding: 8px 0;
-        border-bottom: 1px solid #eee;
-    }
-    body.dark-mode .trigger a {
-        border-bottom-color: #333;
-    }
-    .site-nav {
-        float: none;
-        text-align: right;
-    }
-    /* Move theme toggle to avoid overlap with menu button */
-    #theme-toggle {
-        top: 15px;
-        right: 60px;
-    }
 }
 
 /* ============================================
