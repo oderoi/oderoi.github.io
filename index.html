@@ -2,17 +2,18 @@
 layout: default
 ---
 
-<div>
+<div class="home">
 
-    <ul>
-        {% for post in site.posts %}
-        <li>
-            <span class="post-date">{{ post-date | date: "%b %-d, %Y" }}</span>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
-            <br>
-            {{ post.excerpt }}
-        </li>
-        {% endfor %}
-    </ul>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post-item">
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+          <span class="post-title">{{ post.title }}</span>
+          <span class="post-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</span>
+          <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 
 </div>

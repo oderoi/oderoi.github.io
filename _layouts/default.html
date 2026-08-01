@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  {% include head.html %}
+{% include head.html %}
 
-    <body>
+<body>
 
-    {% include header.html %}
+  {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrap">
+  <main class="page-content">
+    <div class="wrap">
       {{ content }}
-      </div>
     </div>
+  </main>
 
-    {% include footer.html %}
+  {% include footer.html %}
 
-    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
-    </body>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+
+</body>
 </html>
