@@ -1,8 +1,8 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 includelink: true
 ---
 
-See my [website](https://your-website.com/).
+I love to make CPU Go zzz...
