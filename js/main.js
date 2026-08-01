@@ -5,18 +5,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const siteNav = document.getElementById('site-nav');
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
+            e.stopPropagation();
             const isOpen = navMenu.classList.toggle('nav-open');
+            siteNav.classList.toggle('nav-open', isOpen);
             menuToggle.setAttribute('aria-expanded', isOpen);
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('nav-open');
+                siteNav.classList.remove('nav-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
@@ -26,21 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // DARK MODE TOGGLE
     // ============================================
     const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
     const body = document.body;
 
-    // Load saved preference on page load
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
-        if (themeToggle) themeToggle.textContent = '☀️';
+        if (themeIcon) themeIcon.textContent = '☀️';
     }
 
     if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
+        themeToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             body.classList.toggle('dark-mode');
             const isDark = body.classList.contains('dark-mode');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
         });
     }
 

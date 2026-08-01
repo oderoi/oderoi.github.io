@@ -451,176 +451,189 @@ body {
 
 
 /* ============================================
-   THEME TOGGLE BUTTON (inside header)
+   HEADER ACTIONS (theme + menu buttons)
    ============================================ */
-#theme-toggle {
+.header-actions {
+    float: right;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 56px;
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     background: transparent;
-    color: #333;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
+    color: #505050;
+    transition: background 0.2s, color 0.2s;
+    padding: 0;
+}
+
+.icon-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.icon-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+.theme-icon {
     font-size: 20px;
     line-height: 1;
-    padding: 4px 8px;
-    margin-left: 12px;
-    vertical-align: middle;
-    transition: transform 0.2s;
-}
-#theme-toggle:hover {
-    transform: scale(1.15);
-}
-body.dark-mode #theme-toggle {
-    color: #e0e0e0;
 }
 
 /* ============================================
-   MOBILE MENU BUTTON — no background
-   ============================================ */
-.menu-icon {
-    background: none;
-    border: none;
-    padding: 4px;
-    margin: 0;
-    cursor: pointer;
-    display: none;
-    vertical-align: middle;
-}
-.menu-icon svg {
-    display: block;
-    width: 22px;
-    height: 18px;
-}
-.menu-icon:focus {
-    outline: 2px solid #66b3ff;
-    outline-offset: 2px;
-    border-radius: 2px;
-}
-
-/* ============================================
-   NAV LAYOUT (desktop vs mobile)
+   SITE NAV & MENU
    ============================================ */
 .site-nav {
-    float: right;
-    line-height: 56px;
+    clear: both;
+    display: none;
 }
+
+.site-nav.nav-open {
+    display: block;
+}
+
 .trigger {
-    display: inline-block;
-    vertical-align: middle;
+    padding: 8px 0;
 }
+
 .trigger a {
-    margin-left: 16px;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 1.5;
 }
 
-/* Desktop: theme toggle sits right next to About */
+.trigger a:last-child {
+    border-bottom: none;
+}
+
+/* Desktop */
 @media screen and (min-width: 601px) {
-    .site-nav {
-        display: flex;
-        align-items: center;
+    .header-actions {
+        gap: 4px;
     }
-    .trigger {
-        display: inline-block !important;
-    }
-}
-
-/* Mobile: hamburger + toggle side by side, no overlap */
-@media screen and (max-width: 600px) {
-    .site-nav {
-        float: right;
-        line-height: normal;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+    
     .menu-icon {
-        display: block;
-        order: 2;
-    }
-    #theme-toggle {
-        display: block;
-        order: 1;
-        margin-left: 0;
-        padding: 4px;
-    }
-    .trigger {
         display: none;
-        position: absolute;
-        top: 56px;
-        right: 20px;
-        background: #fff;
-        border: 1px solid #e8e8e8;
-        border-radius: 4px;
-        padding: 8px 16px;
-        min-width: 140px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        z-index: 100;
     }
-    .trigger.nav-open {
+    
+    .site-nav {
+        clear: none;
         display: block;
+        float: right;
+        height: 56px;
+        line-height: 56px;
     }
+    
+    .trigger {
+        display: inline-block;
+        padding: 0;
+    }
+    
     .trigger a {
-        display: block;
-        padding: 8px 0;
-        margin-left: 0;
-        border-bottom: 1px solid #eee;
-        line-height: 1.5;
-    }
-    .trigger a:last-child {
-        border-bottom: none;
-    }
-    body.dark-mode .trigger {
-        background: #16213e;
-        border-color: #0f3460;
-    }
-    body.dark-mode .trigger a {
-        border-bottom-color: #0f3460;
-        color: #e0e0e0;
+        display: inline;
+        margin-left: 20px;
+        padding: 0;
+        border: none;
     }
 }
 
 /* ============================================
-   DARK MODE STYLES
+   DARK MODE — Soft Charcoal (Beautiful & Uniform)
    ============================================ */
 body.dark-mode {
-    background-color: #1a1a2e;
+    background-color: #1a1a1a;
     color: #e0e0e0;
 }
-body.dark-mode .site-header {
-    background-color: #16213e;
-    border-bottom: 1px solid #0f3460;
-}
+
+body.dark-mode .site-header,
 body.dark-mode .site-footer {
-    background-color: #16213e;
-    border-top: 1px solid #0f3460;
+    background-color: #1e1e1e;
+    border-color: #2a2a2a;
 }
-body.dark-mode a {
-    color: #66b3ff;
-}
-body.dark-mode a:hover {
-    color: #99ccff;
-}
-body.dark-mode .page-content {
-    background-color: #1a1a2e;
-}
-body.dark-mode .wrap {
-    background-color: #1a1a2e;
-}
-body.dark-mode .post-date {
-    color: #aaa;
-}
+
+body.dark-mode .site-title,
+body.dark-mode .page-link,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode h5,
 body.dark-mode h6 {
-    color: #e0e0e0;
+    color: #f0f0f0;
 }
+
+body.dark-mode a {
+    color: #6bb5ff;
+}
+
+body.dark-mode a:hover {
+    color: #9fd4ff;
+}
+
+body.dark-mode .page-content,
+body.dark-mode .wrap {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .post-date {
+    color: #888;
+}
+
+body.dark-mode .meta {
+    color: #999;
+}
+
 body.dark-mode code {
-    background-color: #2d2d44;
+    background-color: #2a2a2a;
+    color: #e8e8e8;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+body.dark-mode pre {
+    background-color: #242424;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+body.dark-mode pre code {
+    background: none;
+    padding: 0;
+}
+
+body.dark-mode .trigger a {
+    border-bottom-color: #2a2a2a;
     color: #e0e0e0;
 }
-body.dark-mode pre {
-    background-color: #2d2d44;
-    border-color: #0f3460;
+
+body.dark-mode .icon-btn {
+    color: #c0c0c0;
+}
+
+body.dark-mode .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile dropdown in dark mode */
+body.dark-mode .trigger {
+    background-color: #242424;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 4px;
 }
 
 /* ============================================
@@ -635,27 +648,35 @@ body.dark-mode pre {
     color: #fff;
     border: none;
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     font-size: 22px;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, background 0.2s;
-    line-height: 45px;
+    transition: opacity 0.3s, visibility 0.3s, background 0.2s, transform 0.2s;
+    line-height: 48px;
     text-align: center;
     padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
+
 #back-to-top.visible {
     opacity: 1;
     visibility: visible;
 }
+
 #back-to-top:hover {
     background: #555;
+    transform: translateY(-2px);
 }
+
 body.dark-mode #back-to-top {
-    background: #0f3460;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
+
 body.dark-mode #back-to-top:hover {
-    background: #1a4a7a;
+    background: #3a3a3a;
 }
