@@ -448,3 +448,74 @@ body {
 .site-footer {
   flex-shrink: 0;
 }
+
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+.site-nav .trigger {
+    display: none;
+}
+.site-nav.nav-open .trigger {
+    display: block;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+body.dark-mode .site-header,
+body.dark-mode .site-footer {
+    background-color: #222;
+    border-color: #333;
+}
+body.dark-mode a {
+    color: #66b3ff;
+}
+
+/* Dark mode toggle button */
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+#back-to-top:hover {
+    background: #555;
+}

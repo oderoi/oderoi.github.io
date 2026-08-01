@@ -5,15 +5,17 @@
 
     <body>
 
-    {% include header.html %}
+        {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrap">
-      {{ content }}
-      </div>
-    </div>
+        <div class="page-content">
+        <div class="wrap">
+        {{ content }}
+        </div>
+        </div>
 
-    {% include footer.html %}
+        {% include footer.html %}
+
+        <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
     </body>
 </html>
