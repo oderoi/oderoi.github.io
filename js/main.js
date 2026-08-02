@@ -53,18 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
   let posts = [];
   let selectedIndex = -1;
 
-  // Fetch search index — hardcoded path since baseurl is empty
   fetch('/search.json')
-    .then(r => r.json())
-    .then(data => { posts = data; })
-    .catch(() => { posts = []; });
+    .then(function(r) { return r.json(); })
+    .then(function(data) { posts = data; })
+    .catch(function() { posts = []; });
 
   function openSearch() {
     searchOverlay.classList.add('open');
     searchInput.value = '';
     searchResults.innerHTML = '';
     selectedIndex = -1;
-    setTimeout(() => searchInput.focus(), 50);
+    setTimeout(function() { searchInput.focus(); }, 50);
     document.body.style.overflow = 'hidden';
   }
 
@@ -80,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function highlight(text, query) {
     if (!query) return text;
-    const re = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+    var re = new RegExp('(' + escapeRegex(query) + ')', 'gi');
     return text.replace(re, '<mark>$1</mark>');
   }
 
@@ -94,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    const html = matches.map(function(p, i) {
+    var html = matches.map(function(p, i) {
       return '<a class="search-result' + (i === 0 ? ' selected' : '') + '" href="' + p.url + '" data-index="' + i + '">' +
         '<div class="search-result-title">' + highlight(p.title, query) + '</div>' +
         '<div class="search-result-excerpt">' + highlight(p.excerpt, query) + '</div>' +
@@ -107,13 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function performSearch(query) {
-    const q = query.toLowerCase().trim();
+    var q = query.toLowerCase().trim();
     if (!q) {
       searchResults.innerHTML = '';
       selectedIndex = -1;
       return;
     }
-    const matches = posts.filter(function(p) {
+    var matches = posts.filter(function(p) {
       return p.title.toLowerCase().includes(q) ||
              p.excerpt.toLowerCase().includes(q) ||
              p.content.toLowerCase().includes(q);
@@ -122,20 +121,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function updateSelection() {
-    const items = searchResults.querySelectorAll('.search-result');
+    var items = searchResults.querySelectorAll('.search-result');
     items.forEach(function(item, i) {
       item.classList.toggle('selected', i === selectedIndex);
     });
-    const selected = items[selectedIndex];
+    var selected = items[selectedIndex];
     if (selected) selected.scrollIntoView({ block: 'nearest' });
   }
 
-  if (searchToggle) {
-    searchToggle.addEventListener('click', openSearch);
-  }
-  if (searchClose) {
-    searchClose.addEventListener('click', closeSearch);
-  }
+  if (searchToggle) searchToggle.addEventListener('click', openSearch);
+  if (searchClose) searchClose.addEventListener('click', closeSearch);
   if (searchOverlay) {
     searchOverlay.addEventListener('click', function(e) {
       if (e.target === searchOverlay) closeSearch();
@@ -159,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (!searchOverlay.classList.contains('open')) return;
 
-    const items = searchResults.querySelectorAll('.search-result');
+    var items = searchResults.querySelectorAll('.search-result');
 
     if (e.key === 'ArrowDown') {
       e.preventDefault();
@@ -178,13 +173,80 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // ============================================
+  // GLOSSARY TERM CARDS
+  // ============================================
+  var glossary = {};
+  fetch('/glossary.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) { Object.assign(glossary, data); })
+    .catch(function() {});
+
+  var termCard = document.createElement('div');
+  termCard.id = 'term-card';
+  termCard.innerHTML = '<div class="term-card-arrow"></div>' +
+    '<div class="term-card-inner">' +
+      '<div class="term-card-header">' +
+        '<strong id="term-card-title"></strong>' +
+        '<button class="term-card-close" aria-label="Close">×</button>' +
+      '</div>' +
+      '<div class="term-card-body" id="term-card-body"></div>' +
+    '</div>';
+  document.body.appendChild(termCard);
+
+  function showTermCard(key, triggerEl) {
+    var data = glossary[key];
+    if (!data) return;
+
+    document.getElementById('term-card-title').textContent = data.title;
+    document.getElementById('term-card-body').textContent = data.definition;
+    termCard.classList.add('visible');
+
+    var rect = triggerEl.getBoundingClientRect();
+    var cardWidth = 320;
+    var left = rect.left + window.scrollX;
+    var top = rect.bottom + window.scrollY + 10;
+
+    if (left + cardWidth > window.innerWidth - 20) {
+      left = window.innerWidth - cardWidth - 20;
+    }
+    if (left < 10) left = 10;
+
+    termCard.style.left = left + 'px';
+    termCard.style.top = top + 'px';
+
+    var arrow = termCard.querySelector('.term-card-arrow');
+    var termCenter = rect.left + rect.width / 2;
+    var arrowLeft = termCenter - left - 6;
+    arrow.style.left = Math.max(12, Math.min(arrowLeft, cardWidth - 24)) + 'px';
+  }
+
+  function hideTermCard() {
+    termCard.classList.remove('visible');
+  }
+
+  document.addEventListener('click', function(e) {
+    var termEl = e.target.closest('.term');
+    if (termEl) {
+      e.stopPropagation();
+      showTermCard(termEl.dataset.term, termEl);
+      return;
+    }
+    if (e.target.closest('.term-card-close')) {
+      hideTermCard();
+      return;
+    }
+    if (!e.target.closest('#term-card')) {
+      hideTermCard();
+    }
+  });
+
+  // ============================================
   // BACK TO TOP
   // ============================================
-  const backToTop = document.getElementById('back-to-top');
+  var backToTop = document.getElementById('back-to-top');
 
   if (backToTop) {
-    let ticking = false;
-
+    var ticking = false;
     window.addEventListener('scroll', function() {
       if (!ticking) {
         window.requestAnimationFrame(function() {

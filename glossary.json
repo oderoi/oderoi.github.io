@@ -1,0 +1,11 @@
+---
+layout: none
+---
+{
+{% for term in site.data.glossary %}
+  "{{ term[0] }}": {
+    "title": {{ term[1].title | jsonify }},
+    "definition": {{ term[1].definition | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+}

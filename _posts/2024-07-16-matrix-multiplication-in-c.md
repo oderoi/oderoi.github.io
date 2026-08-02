@@ -1,3 +1,11 @@
+
+---
+
+## 7. Update `_posts/2024-07-16-matrix-multiplication-in-c.md`
+
+Replace the entire file:
+
+```markdown
 ---
 layout: post
 title: "Matrix multiplication in C"
@@ -7,7 +15,7 @@ categories: Math Algorithms using C
 mathjax: true
 ---
 
-Given two matrices A of dimensions M x K and B of dimension K x N, we want to compute their dot product C = A . B, which is also known as matrix multiplication.
+Given two matrices A of dimensions M x K and B of dimension K x N, we want to compute their {% include term.html name="dot_product" text="dot product" %} C = A . B, which is also known as {% include term.html name="matrix_multiplication" text="matrix multiplication" %}.
 
 The dot product.
 
@@ -38,7 +46,7 @@ $Code$
 /*
 Contant definition.
 
-Here we use #define for the fan fact that it behave as macros whose value are subtituted at
+Here we use #define for the fan fact that it behave as {% include term.html name="macro" text="macros" %} whose value are subtituted at
 run-time.
 --------
 Here we have the value size of rows and columns of matrix A[rowA][colA] and B[rowB][colB].
@@ -83,7 +91,7 @@ int main(){
                     {1,2,3,4},
                     {1,2,3,4}};
 
-    //Calling of dot_product() function and initialize it to a pointer variable int **mult
+    //Calling of dot_product() function and initialize it to a {% include term.html name="pointer" text="pointer" %} variable int **mult
     int **mult=dot_product(A,B);
 
     //This is nested for-loop for printing the result matrix C[rowA][colB]

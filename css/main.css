@@ -848,3 +848,120 @@ a:hover {
     display: none;
   }
 }
+
+/* ============================================
+   GLOSSARY TERMS
+   ============================================ */
+.term {
+  border-bottom: 1px dashed var(--accent);
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.term:hover {
+  background: rgba(37, 99, 235, 0.08);
+  border-bottom-style: solid;
+}
+
+.dark-mode .term:hover {
+  background: rgba(96, 165, 250, 0.12);
+}
+
+/* ============================================
+   TERM CARD
+   ============================================ */
+#term-card {
+  position: absolute;
+  z-index: 1500;
+  width: 320px;
+  max-width: calc(100vw - 40px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
+
+#term-card.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.term-card-arrow {
+  position: absolute;
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-elevated);
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.term-card-inner {
+  position: relative;
+  z-index: 2;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.term-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.term-card-header strong {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.term-card-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+  transition: all var(--transition);
+}
+
+.term-card-close:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.term-card-body {
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  #term-card {
+    width: calc(100vw - 40px);
+    left: 20px !important;
+  }
+  .term-card-arrow {
+    display: none;
+  }
+}

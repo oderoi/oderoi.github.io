@@ -5,9 +5,9 @@ date: 2026-08-02 03:49:00 +0300
 mathjax: true
 ---
 
-Palindromic number (also known as a **numeral palindrome** or a **numeric palindrome**) is a number (such as **16461**) that remains the same when its digits are reversed.
+{% include term.html name="palindrome" text="Palindromic number" %} (also known as a {% include term.html name="palindrome" text="numeral palindrome" %} or a {% include term.html name="palindrome" text="numeric palindrome" %}) is a number (such as **16461**) that remains the same when its digits are reversed.
 
-In other words it has **reflectional symmetry** across a vertical axis.
+In other words it has {% include term.html name="reflectional_symmetry" text="reflectional symmetry" %} across a vertical axis.
 
 The term palindromic is derived from palindrome, which refers to a word (such as **rotor**, **tenet**) whose spelling is unchanged when its letters are reversed.
 
@@ -19,7 +19,7 @@ where: $0 \le a_{i} < b$ for all $i$ and $a_{k} \ne 0$
 
 Then $n$ is palindromic if and only if $a_{i} = a_{k - i}$ for all $i$. **Zero** is written $0$ in any base and is also palindromic by definition.
 
-Note: Although palindromic numbers are most often considered in the **decimal** system, the concept of **palindromicity** can be applied to the **natural numbers** in any **numeral system**.
+Note: Although palindromic numbers are most often considered in the {% include term.html name="decimal" text="decimal" %} system, the concept of **palindromicity** can be applied to the {% include term.html name="natural_numbers" text="natural numbers" %} in any {% include term.html name="numeral_system" text="numeral system" %}.
 
 Example of 20 first palindromic numbers (in decimal):
 

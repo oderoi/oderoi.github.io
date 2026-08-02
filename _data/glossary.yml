@@ -1,0 +1,39 @@
+palindrome:
+  title: "Palindrome"
+  definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palíndromos' meaning 'running back again'."
+
+reflectional_symmetry:
+  title: "Reflectional Symmetry"
+  definition: "A property where one half of an object is the mirror image of the other half across a central axis. Also called line symmetry or mirror symmetry."
+
+decimal:
+  title: "Decimal System"
+  definition: "The base-10 numeral system that uses ten digits (0–9). It is the standard system for denoting integer and non-integer numbers."
+
+natural_numbers:
+  title: "Natural Numbers"
+  definition: "The set of positive integers used for counting and ordering: {1, 2, 3, ...}. Sometimes includes 0 depending on the definition."
+
+numeral_system:
+  title: "Numeral System"
+  definition: "A writing system for expressing numbers using digits or other symbols in a consistent manner. Examples include decimal (base-10), binary (base-2), and hexadecimal (base-16)."
+
+matrix_multiplication:
+  title: "Matrix Multiplication"
+  definition: "A binary operation that produces a matrix from two matrices. For A (m×k) and B (k×n), the product C = AB is an m×n matrix where each element cᵢⱼ = Σₖ aᵢₖ·bₖⱼ."
+
+dot_product:
+  title: "Dot Product"
+  definition: "An algebraic operation that takes two equal-length sequences of numbers and returns a single number by multiplying corresponding entries and summing the products."
+
+pointer:
+  title: "Pointer"
+  definition: "A programming language object that stores a memory address. In C, a pointer is a variable whose value is the address of another variable, enabling direct memory manipulation."
+
+macro:
+  title: "Macro"
+  definition: "A fragment of code that has been given a name. In C, #define creates preprocessor macros that are textually replaced before compilation, unlike functions which are called at runtime."
+
+algorithm:
+  title: "Algorithm"
+  definition: "A finite sequence of well-defined instructions to solve a specific problem or perform a computation. The word comes from the 9th-century mathematician Al-Khwarizmi."
