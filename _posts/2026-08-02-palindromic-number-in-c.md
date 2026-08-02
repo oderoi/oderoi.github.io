@@ -11,7 +11,7 @@ mathjax: true
 
 In other words it has {% include term.html name="reflectional_symmetry" text="reflectional symmetry" %} across a vertical axis.
 
-The term palindromic is derived from palindrome, which refers to a word (such as **rotor**, **tenet**) whose spelling is unchanged when its letters are reversed.
+The term palindromic is derived from palindrome, which refers to a word (such as **{% include term.html name="rotor" text="rotor" %}**, **tenet**) whose spelling is unchanged when its letters are reversed.
 
 Consider a number $n > 0$ in base $b \ge 2$ where it is written in standard notation with $k + 1$ digits $a_{i}$ as:
 
