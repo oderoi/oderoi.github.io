@@ -86,4 +86,4 @@ recurrence:
   title: "Recurrence relation"
   meanings:
     - context: "Mathematics"
-      definiton: "A recurrence relation is an equation that expresses each element of a sequence as a function of its preceding elements. It defines the term based on previous terms"
+      definition: "A recurrence relation is an equation that expresses each element of a sequence as a function of its preceding elements. It defines the term based on previous terms"
