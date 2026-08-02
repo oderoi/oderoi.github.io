@@ -5,11 +5,11 @@ date: 2026-08-02 03:49:00 +0300
 mathjax: true
 ---
 
-Palindromic number (also known as a _**numeral palindrome**_ or a _**numeric palindrome**_) is a number (such as _**16461**_) that remains the same when its digits are reversed.
+Palindromic number (also known as a **numeral palindrome** or a **numeric palindrome**) is a number (such as **16461**) that remains the same when its digits are reversed.
 
-In other words it has __**reflectional symmetry**__ across a vertical axis.
+In other words it has **reflectional symmetry** across a vertical axis.
 
-The term palindromic is derived from palindrome, which refers to a word (such as _**rotor**_, _**tenet**_) whose spelling is unchanged when its letters are reversed.
+The term palindromic is derived from palindrome, which refers to a word (such as **rotor**, **tenet**) whose spelling is unchanged when its letters are reversed.
 
 Consider a number $n > 0$ in base $b \ge 2$ where it is written in standard notation with $k + 1$ digits $a_{i}$ as:
 
@@ -17,15 +17,15 @@ $$n = \sum_{i=0}^{k} a_{i} b^{i}$$
 
 where: $0 \le a_{i} < b$ for all $i$ and $a_{k} \ne 0$
 
-Then $n$ is palindromic if and only if $a_{i} = a_{k - i}$ for all $i$. _**Zero**_ is written $0$ in any base and is also palindromic by definition.
+Then $n$ is palindromic if and only if $a_{i} = a_{k - i}$ for all $i$. **Zero** is written $0$ in any base and is also palindromic by definition.
 
-Note: Although palindromic numbers are most often considered in the _**decimal**_ system, the concept of _**palindromicity**_ can be applied to the _**natural numbers**_ in any _**numeral system**_.
+Note: Although palindromic numbers are most often considered in the **decimal** system, the concept of **palindromicity** can be applied to the **natural numbers** in any **numeral system**.
 
 Example of 20 first palindromic numbers (in decimal):
 
 $$0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99, 101, \cdots$$
 
-The following code in _**C**_ will check if the given number by the user is a palindromic number or not.
+The following code in **C** will check if the given number by the user is a palindromic number or not.
 
 ```c
 /*

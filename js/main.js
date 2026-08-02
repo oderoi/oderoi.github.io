@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
   let posts = [];
   let selectedIndex = -1;
 
-  // Fetch search index
-  fetch('{{ site.baseurl }}/search.json')
+  // Fetch search index — hardcoded path since baseurl is empty
+  fetch('/search.json')
     .then(r => r.json())
     .then(data => { posts = data; })
     .catch(() => { posts = []; });
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function highlight(text, query) {
     if (!query) return text;
-    const re = new RegExp(`(${escapeRegex(query)})`, 'gi');
+    const re = new RegExp('(' + escapeRegex(query) + ')', 'gi');
     return text.replace(re, '<mark>$1</mark>');
   }
 
@@ -94,13 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    const html = matches.map((p, i) => `
-      <a class="search-result${i === 0 ? ' selected' : ''}" href="${p.url}" data-index="${i}">
-        <div class="search-result-title">${highlight(p.title, query)}</div>
-        <div class="search-result-excerpt">${highlight(p.excerpt, query)}</div>
-        <div class="search-result-date">${p.date}</div>
-      </a>
-    `).join('');
+    const html = matches.map(function(p, i) {
+      return '<a class="search-result' + (i === 0 ? ' selected' : '') + '" href="' + p.url + '" data-index="' + i + '">' +
+        '<div class="search-result-title">' + highlight(p.title, query) + '</div>' +
+        '<div class="search-result-excerpt">' + highlight(p.excerpt, query) + '</div>' +
+        '<div class="search-result-date">' + p.date + '</div>' +
+      '</a>';
+    }).join('');
 
     searchResults.innerHTML = html;
     selectedIndex = 0;
@@ -113,17 +113,17 @@ document.addEventListener('DOMContentLoaded', function() {
       selectedIndex = -1;
       return;
     }
-    const matches = posts.filter(p =>
-      p.title.toLowerCase().includes(q) ||
-      p.excerpt.toLowerCase().includes(q) ||
-      p.content.toLowerCase().includes(q)
-    ).slice(0, 8);
+    const matches = posts.filter(function(p) {
+      return p.title.toLowerCase().includes(q) ||
+             p.excerpt.toLowerCase().includes(q) ||
+             p.content.toLowerCase().includes(q);
+    }).slice(0, 8);
     renderResults(matches, query);
   }
 
   function updateSelection() {
     const items = searchResults.querySelectorAll('.search-result');
-    items.forEach((item, i) => {
+    items.forEach(function(item, i) {
       item.classList.toggle('selected', i === selectedIndex);
     });
     const selected = items[selectedIndex];
@@ -148,18 +148,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.addEventListener('keydown', function(e) {
-    // Open search
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
       e.preventDefault();
       openSearch();
       return;
     }
-    // Close search
     if (e.key === 'Escape' && searchOverlay.classList.contains('open')) {
       closeSearch();
       return;
     }
-    // Navigate results
     if (!searchOverlay.classList.contains('open')) return;
 
     const items = searchResults.querySelectorAll('.search-result');
