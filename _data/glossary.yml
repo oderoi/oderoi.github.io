@@ -79,11 +79,11 @@ sequence:
   title: "Sequence"
   meanings:
     - context: "Mathematics"
-    - definition: "In mathematics, an integer sequence is a sequence of integer."
+      definition: "In mathematics, an integer sequence is a sequence of integer."
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Goteborg_ciag_Fibonacciego.jpg/500px-Goteborg_ciag_Fibonacciego.jpg"
 
-recurence:
+recurrence:
   title: "Recurrence relation"
   meanings:
     - context: "Mathematics"
-    - definiton: "A recurrence relation is an equation that expresses each element of a sequence as a function of its preceding elements. It defines the term based on previous terms"
+      definiton: "A recurrence relation is an equation that expresses each element of a sequence as a function of its preceding elements. It defines the term based on previous terms"
