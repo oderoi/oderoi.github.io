@@ -27,8 +27,7 @@ $$0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99, 101, \cdots$
 
 The following code in **C** will check if the given number by the user is a palindromic number or not.
 
-{% raw %}
-```c
+{% highlight c %}
 /*
 This code helps us to look if a given number is palindromic or not.
 */
@@ -70,4 +69,4 @@ int palindromic_no(int number, int reverse, int remainder) {
     }
     return 0;
 }
-```
+{% endhighlight %}

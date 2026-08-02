@@ -1,6 +1,6 @@
 palindrome:
   title: "Palindrome"
-  definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palindromos' meaning 'running back again'."
+  definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palíndromos' meaning 'running back again'."
 
 reflectional_symmetry:
   title: "Reflectional Symmetry"

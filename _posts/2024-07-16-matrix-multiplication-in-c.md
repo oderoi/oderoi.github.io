@@ -31,8 +31,7 @@ $$B \in \mathbb{R}^{k \times n}  ==   B \in \mathbb{R}^{rowB \times colB}$$
 
 Code:
 
-{% raw %}
-```c
+{% highlight c %}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -135,4 +134,6 @@ int** dot_product (int A[][colA], int B[][colB]){
     }
     return mult;
 }
-```
+{% endhighlight %}
+
+![matrix multiplication](images/dot.png)
