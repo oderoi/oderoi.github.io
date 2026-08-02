@@ -69,4 +69,3 @@ int palindromic_no(int number, int reverse, int remainder) {
     }
     return 0;
 }
-```

@@ -3,7 +3,7 @@ layout: post
 title: "Matrix multiplication in C"
 date: 2024-07-16
 excerpt: "Matrix multiplication using C programming"
-categories: "Math Algorithms using C"
+categories: Math Algorithms using C
 mathjax: true
 ---
 
@@ -15,21 +15,21 @@ $C += A . B$
 
 $1D Array.$
 
-$$C_{i} = \sum\limits_{i = 0}^{n} (A_{i} . B_{i}) = A_{1}B_{1} + A_{2}B_{2} + ...+ A_{n}B_{n}$$
+$C_{i} = \sum\limits_{i = 0}^{n} (A_{i} . B_{i}) = A_{1}B_{1} + A_{2}B_{2} + ...+ A_{n}B_{n}$
 
 $2D Array.$
 
-$$C_{i , j} = \sum\limits_{k \in [0 ... K) } (A_{i , k} . B_{k , j})$$
+$C_{i , j} = \sum\limits_{k \in [0 ... K) } (A_{i , k} . B_{k , j})$
 
-$$C_{i , j} = A_{i , k} . B_{k , j}$$
+$C_{i , j} = A_{i , k} . B_{k , j}$
 
 Consider
 
-$$A \in \mathbb{R}^{m \times k}  ==   A \in \mathbb{R}^{rowA \times colA}$$
+$A \in \mathbb{R}^{m \times k}  ==   A \in \mathbb{R}^{rowA \times colA}$
 
-$$B \in \mathbb{R}^{k \times n}  ==   B \in \mathbb{R}^{rowB \times colB}$$
+$B \in \mathbb{R}^{k \times n}  ==   B \in \mathbb{R}^{rowB \times colB}$
 
-Code:
+$Code$
 
 ```c
 #include <stdio.h>
@@ -38,7 +38,7 @@ Code:
 /*
 Contant definition.
 
-Here we use #define for the fan fact that it behave as macros whose value are subtituted at
+Here we use #define for the fan fact that it behave as {% include term.html name="macro" text="macros" %} whose value are subtituted at
 run-time.
 --------
 Here we have the value size of rows and columns of matrix A[rowA][colA] and B[rowB][colB].
@@ -73,21 +73,21 @@ int main(){
     */
     //Initialize and Declare the matrix A[rowA][colA]
     int A[][colA] = {
-                    {1,2,3,4},
-                    {5,6,7,8}, 
-                    {9,10,11,12},
-                    {13,14,15,16}
+                        {1,2,3,4},
+                        {5,6,7,8}, 
+                        {9,10,11,12},
+                        {13,14,15,16}
                     };
 
     //Initialize and Declare the matrix B[rowB][colB]
-    int B[][colB] = {
-                    {1,2,3,4},
-                    {1,2,3,4},
-                    {1,2,3,4},
-                    {1,2,3,4}
+    int B[][colB]= {
+                        {1,2,3,4},
+                        {1,2,3,4},
+                        {1,2,3,4},
+                        {1,2,3,4}
                     };
 
-    //Calling of dot_product() function and initialize it to a pointer variable int **mult
+    //Calling of dot_product() function and initialize it to a {% include term.html name="pointer" text="pointer" %} variable int **mult
     int **mult=dot_product(A,B);
 
     //This is nested for-loop for printing the result matrix C[rowA][colB]
