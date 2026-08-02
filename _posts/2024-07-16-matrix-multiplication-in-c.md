@@ -72,7 +72,7 @@ int main(){
     also the 2-D arrays (Matricies) to match their size at their constant definition.
     */
     //Initialize and Declare the matrix A[rowA][colA]
-    int A[][colA] = {
+    int A[rowA][colA] = {
                         {1,2,3,4},
                         {5,6,7,8}, 
                         {9,10,11,12},
@@ -80,7 +80,7 @@ int main(){
                     };
 
     //Initialize and Declare the matrix B[rowB][colB]
-    int B[][colB]= {
+    int B[rowB][colB]= {
                         {1,2,3,4},
                         {1,2,3,4},
                         {1,2,3,4},

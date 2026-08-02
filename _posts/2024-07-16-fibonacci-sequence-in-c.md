@@ -1,81 +1,63 @@
 ---
 layout: post
-title: "Fibonacci sequence in C"
+title: "Fibonacci Sequence in C"
 date: 2024-07-16
-excerpt: "Finding Fibonacci Sequence using C programming"
+excerpt: "Understanding recursion and the golden ratio through Fibonacci"
 categories: [C, Math]
 mathjax: true
 ---
 
-# Fibonacci Sequence in C
+The {% include term.html name="sequence" text="Fibonacci sequence" %} is a {% include term.html name="recurrence" text="recurrence relation" %} where each number is the sum of the two {% include term.html name="element" text="elements" %} that precede it.
 
-Fibonacci Sequence is a {% include term.html name="sequence" text="sequence" %} in which each element is the sum of the two elemente that procede it.
+## The Math
 
-Number that are part of the Fibonacci sequence are known as Fibonacci numbers.
+$$F_0 = 0,\quad F_1 = 1$$
+$$F_n = F_{n-1} + F_{n-2} \quad \text{for } n > 1$$
 
-It is commonly start with 0 and 1.
+## Why This Works (Recursion Tree)
 
-The Fibonacci numbers may be defined by the {% include term.html name="recurrence" text="recurrence relation" %}.
+factorial(5)
+├── factorial(4)
+│   ├── factorial(3)
+│   │   ├── factorial(2)
+│   │   │   ├── factorial(1) → 1  (base case!)
+│   │   │   └── factorial(0) → 0  (base case!)
 
+## The C Code
 
-$F_{0} = 0,     F_{1} = 1,$
+{% highlight c %}
+#include <stdio.h>
 
-and
-
-$f_{n} = F_{n - 1}  +   F_{n - 2}$
-
-for $n > 1.$
-
-![Fibonacci Spiral](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fibonacci_Spiral.svg/500px-Fibonacci_Spiral.svg.png)
-$Fibonacci Spiral$
-
-$Code$
-
-```c
-#include<stdio.h>
-
-/*
-Function Declaration
---------------------
-Our function will take in argument by value (integer) and return an interger
-*/
 int fibonacci(int n);
 
-int main(){
-
-    //i_nth number of fibonacci numbers
-    int n=10;
-
-    //printing the fibonnaci numbers
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d\t\n",fibonacci(i));
+int main() {
+    int n = 10;
+    for (int i = 0; i < n; i++) {
+        printf("%d\t", fibonacci(i));
     }
-    
+    printf("\n");
     return 0;
 }
-/*
-Function definition
--------------------
-fibonacci() function will take in an argument of i_nth integer number.
 
-fibonacci() function will return fibonacci numbers one by one
-
-Note:. that we use recursion function to solve this problem.
-                   ------------------
-Recursion function is the function that calls itself.
-*/
-int fibonacci( int n){
-
-    //if n is 0 return 0
-    if (n==0){
-        return n;
-    }
-
-    //if n is 1 return 1
-    if (n==1){
-        return n;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
+int fibonacci(int n) {
+    if (n == 0) return 0;   // {% include term.html name="base_case" text="base case" %}
+    if (n == 1) return 1;   // {% include term.html name="base_case" text="base case" %}
+    return fibonacci(n - 1) + fibonacci(n - 2);  // {% include term.html name="recursion" text="recursive" %} step
 }
-```
+{% endhighlight %}
+
+## Expected Output
+
+0	1	1	2	3	5	8	13	21	34
+
+## Real-World Context
+
+- **Nature:** Petal arrangements, pinecones, nautilus shells
+- **Finance:** Technical analysis retracement levels
+- **Algorithms:** Introduces memoization and dynamic programming
+
+## Try It Yourself
+
+1. Modify the code to print the first 20 Fibonacci numbers.
+2. What happens when `n = 50`? Why is it so slow? (Hint: count the repeated calls)
+3. Implement an iterative version using a {% include term.html name="for_loop" text="for loop" %}.

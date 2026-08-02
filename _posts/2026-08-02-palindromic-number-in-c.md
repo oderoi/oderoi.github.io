@@ -72,3 +72,27 @@ int palindromic_no(int number, int reverse, int remainder) {
     return 0;
 }
 ```
+
+## How It Works (Step by Step)
+
+Let's trace `num = 16461`:
+
+| Iteration | num | rem = num % 10 | reverse = reverse×10 + rem | num = num / 10 |
+|-----------|-----|----------------|---------------------------|----------------|
+| 1 | 16461 | 1 | 0×10 + 1 = **1** | 1646 |
+| 2 | 1646 | 6 | 1×10 + 6 = **16** | 164 |
+| 3 | 164 | 4 | 16×10 + 4 = **164** | 16 |
+| 4 | 16 | 6 | 164×10 + 6 = **1646** | 1 |
+| 5 | 1 | 1 | 1646×10 + 1 = **16461** | 0 |
+
+**Check:** `origin (16461) == reverse (16461)` → ✅ Palindrome!
+
+## Real-World Context
+- **Error correction:** Palindromic DNA sequences in genetics
+- **Cryptography:** Certain palindromic structures in number theory
+- **Date calculations:** 02/02/2020 was a palindromic date
+
+## Try It Yourself
+1. What is the largest palindromic number made from the product of two 3-digit numbers? (Project Euler #4)
+2. Modify the code to check palindromes in base-2 (binary).
+3. Can you solve this without converting the number to a string or reversing it?

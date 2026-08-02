@@ -162,6 +162,23 @@ The function returns `int**` (a {% include term.html name="pointer" text="pointe
 | Not freeing memory | Memory leak |
 | Wrong loop order | Wrong result or out-of-bounds access |
 
+## Identity Matrix Verification
+
+The {% include term.html name="identity_matrix" text="identity matrix" %} $I$ is the \"1\" of matrix multiplication.
+
+$$A \times I = A$$
+
+{% highlight c %}
+// 4x4 Identity Matrix
+int I[4][4] = {
+    {1, 0, 0, 0},
+    {0, 1, 0, 0},
+    {0, 0, 1, 0},
+    {0, 0, 0, 1}
+};
+// Multiply A × I and verify you get A back
+{% endhighlight %}
+
 ## Real-World Applications
 
 - **Graphics**: Transforming 3D coordinates (rotation, scaling, translation)

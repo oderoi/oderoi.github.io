@@ -102,6 +102,23 @@ int main() {
 }
 {% endhighlight %}
 
+## Expected Output
+
+20! = 2432902008176640000
+
+## Growth Visualization
+
+| n | n! | Digits |
+|---|-----|--------|
+| 0 | 1 | 1 |
+| 5 | 120 | 3 |
+| 10 | 3,628,800 | 7 |
+| 15 | 1.3×10¹² | 13 |
+| 20 | 2.4×10¹⁸ | 19 |
+| 25 | 1.6×10²⁵ | 26 |
+
+> Factorial grows faster than exponential functions! This is why `double` is necessary even for modest `n`.
+
 Both versions give the same result, but the iterative one uses constant memory — no risk of {% include term.html name="stack_overflow" text="stack overflow" %}!
 
 ## Real-World Uses

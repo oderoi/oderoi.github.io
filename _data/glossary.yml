@@ -201,3 +201,103 @@ call_stack:
   meanings:
     - context: "Computer Science"
       definition: "A data structure that stores information about active function calls. When a function calls itself (recursion), a new frame is pushed onto the stack. When the function returns, the frame is popped off."
+
+linear_algebra:
+  title: "Linear Algebra"
+  meanings:
+    - context: "Mathematics"
+      definition: "The branch of mathematics concerning linear equations, linear functions, and their representations through matrices and vector spaces. It is the foundational language of modern AI, computer graphics, and data science."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Linear_subspaces_with_shading.svg/500px-Linear_subspaces_with_shading.svg.png"
+
+target_value:
+  title: "Target Value"
+  meanings:
+    - context: "Computer Science"
+      definition: "The specific element or value that a search algorithm is attempting to find within a data structure. In binary search, the target value is compared against the midpoint to decide which half of the array to search next."
+
+index:
+  title: "Index"
+  meanings:
+    - context: "Computer Science"
+      definition: "An integer that identifies the position of an element within an array or list. Array indices in C start at 0, meaning the first element is at index 0, the second at index 1, and so on."
+    - context: "Mathematics"
+      definition: "A subscript notation (e.g., aᵢ) used to identify a specific element in a sequence, series, or matrix."
+
+identity_matrix:
+  title: "Identity Matrix"
+  meanings:
+    - context: "Linear Algebra"
+      definition: "A square matrix with ones on the main diagonal and zeros elsewhere. It acts as the multiplicative identity in matrix algebra: for any matrix A, A × I = I × A = A."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Matrix.svg/500px-Matrix.svg.png"
+
+vector:
+  title: "Vector"
+  meanings:
+    - context: "Linear Algebra"
+      definition: "An ordered list of numbers that can represent magnitude and direction. In computing, it is a one-dimensional array. The dot product of two vectors yields a scalar."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vector_projection.svg/500px-Vector_projection.svg.png"
+
+dimension:
+  title: "Dimension"
+  meanings:
+    - context: "Linear Algebra"
+      definition: "The number of rows and columns in a matrix, expressed as m × n (m rows by n columns). The inner dimensions must match for matrix multiplication."
+    - context: "Computer Science"
+      definition: "The size of an array along a particular axis. A 2D array has two dimensions: rows and columns."
+
+array:
+  title: "Array"
+  meanings:
+    - context: "Computer Science"
+      definition: "A data structure consisting of a collection of elements, each identified by at least one array index or key. In C, arrays are contiguous blocks of memory storing elements of the same type."
+
+element:
+  title: "Element"
+  meanings:
+    - context: "Computer Science"
+      definition: "A single item stored in an array, list, matrix, or other data structure. Each element is accessed via an index."
+    - context: "Mathematics"
+      definition: "An individual entry within a matrix or sequence, often denoted with subscript notation such as aᵢⱼ."
+
+heap:
+  title: "Heap Memory"
+  meanings:
+    - context: "Computer Science"
+      definition: "A region of a computer's memory space used for dynamic allocation. Unlike the stack, the programmer must manually manage heap memory (e.g., using malloc() and free() in C)."
+
+memory_leak:
+  title: "Memory Leak"
+  meanings:
+    - context: "Computer Science"
+      definition: "A type of resource leak that occurs when a computer program incorrectly manages memory allocations, failing to release memory that is no longer needed. In C, forgetting to free() allocated memory causes leaks."
+
+cache:
+  title: "Cache"
+  meanings:
+    - context: "Computer Science"
+      definition: "A hardware or software component that stores data so that future requests for that data can be served faster. In matrix multiplication, transposing the second matrix can improve cache locality and speed."
+
+transpose:
+  title: "Transpose"
+  meanings:
+    - context: "Linear Algebra"
+      definition: "An operation that flips a matrix over its diagonal, switching the row and column indices of each element. The transpose of A is denoted Aᵀ."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Matrix_transpose.gif/500px-Matrix_transpose.gif"
+
+permutation:
+  title: "Permutation"
+  meanings:
+    - context: "Mathematics"
+      definition: "An arrangement of all the members of a set into some sequence or order. The number of permutations of n distinct items is n!."
+
+combination:
+  title: "Combination"
+  meanings:
+    - context: "Mathematics"
+      definition: "A selection of items from a collection where the order of selection does not matter. Related to factorial through the binomial coefficient formula."
+
+taylor_series:
+  title: "Taylor Series"
+  meanings:
+    - context: "Mathematics"
+      definition: "An infinite sum of terms expressed in terms of the derivatives of a function at a single point. Used to approximate functions like eˣ, sin(x), and cos(x) using factorials in the denominators."

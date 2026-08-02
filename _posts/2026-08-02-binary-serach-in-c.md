@@ -148,6 +148,13 @@ int main() {
 }
 {% endhighlight %}
 
+## Code Output Example
+
+Enter a number to search: 21
+✅ 21 found at index 11!
+Enter a number to search: 99
+❌ 99 was not found in the array.
+
 ## Iterative vs Recursive
 
 | Approach | Pros | Cons |
