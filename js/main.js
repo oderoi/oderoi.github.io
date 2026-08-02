@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // ============================================
+    // ============================================
   // GLOSSARY TERM CARDS
   // ============================================
   var glossary = {};
@@ -182,13 +182,17 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function(r) { return r.json(); })
     .then(function(data) {
       Object.assign(glossary, data);
+      // Preload all images
       Object.keys(data).forEach(function(key) {
-        if (data[key].image) {
-          var img = new Image();
-          img.onload = function() { preloadedImages[key] = true; };
-          img.onerror = function() { preloadedImages[key] = false; };
-          img.src = data[key].image;
-        }
+        var meanings = data[key].meanings || [];
+        meanings.forEach(function(m, i) {
+          if (m.image) {
+            var img = new Image();
+            img.onload = function() { preloadedImages[key + '-' + i] = true; };
+            img.onerror = function() { preloadedImages[key + '-' + i] = false; };
+            img.src = m.image;
+          }
+        });
       });
     })
     .catch(function() {});
@@ -201,56 +205,76 @@ document.addEventListener('DOMContentLoaded', function() {
         '<strong id="term-card-title"></strong>' +
         '<button class="term-card-close" aria-label="Close">×</button>' +
       '</div>' +
-      '<div class="term-card-image" id="term-card-image">' +
-        '<div class="term-card-skeleton"></div>' +
-      '</div>' +
-      '<div class="term-card-body" id="term-card-body"></div>' +
+      '<div id="term-card-meanings"></div>' +
     '</div>';
   document.body.appendChild(termCard);
+
+  function renderMeanings(meanings, title) {
+    var container = document.getElementById('term-card-meanings');
+    if (!meanings || meanings.length === 0) {
+      container.innerHTML = '<div class="term-card-body">No definition available.</div>';
+      return;
+    }
+
+    var html = meanings.map(function(m, i) {
+      var hasImage = m.image && m.image !== '' && m.image !== 'null';
+      var imgHtml = '';
+      var key = title.toLowerCase().replace(/\s+/g, '_') + '-' + i;
+
+      if (hasImage) {
+        imgHtml = '<div class="term-card-image" data-img="' + key + '">' +
+          '<div class="term-card-skeleton"></div>' +
+          '<img class="term-card-img" src="' + m.image + '" alt="' + m.context + '" decoding="async" data-key="' + key + '">' +
+        '</div>';
+      }
+
+      return '<div class="term-card-meaning">' +
+        '<div class="term-card-context">' +
+          '<span class="context-badge">' + m.context + '</span>' +
+        '</div>' +
+        imgHtml +
+        '<div class="term-card-body">' + m.definition + '</div>' +
+      '</div>';
+    }).join('');
+
+    container.innerHTML = html;
+
+    // Fade in images after render
+    meanings.forEach(function(m, i) {
+      var key = title.toLowerCase().replace(/\s+/g, '_') + '-' + i;
+      var img = container.querySelector('img[data-key="' + key + '"]');
+      if (img) {
+        if (preloadedImages[key] === true) {
+          img.classList.add('loaded');
+          var skeleton = img.parentNode.querySelector('.term-card-skeleton');
+          if (skeleton) skeleton.style.opacity = '0';
+        } else {
+          img.onload = function() {
+            img.classList.add('loaded');
+            var skeleton = img.parentNode.querySelector('.term-card-skeleton');
+            if (skeleton) skeleton.style.opacity = '0';
+            preloadedImages[key] = true;
+          };
+          img.onerror = function() {
+            img.parentNode.style.display = 'none';
+            preloadedImages[key] = false;
+          };
+        }
+      }
+    });
+  }
 
   function showTermCard(key, triggerEl) {
     var data = glossary[key];
     if (!data) return;
 
     document.getElementById('term-card-title').textContent = data.title;
-    document.getElementById('term-card-body').textContent = data.definition;
-
-    var imgContainer = document.getElementById('term-card-image');
-    if (data.image && data.image !== '' && data.image !== 'null') {
-      imgContainer.style.display = 'block';
-      imgContainer.innerHTML = '<div class="term-card-skeleton"></div>';
-
-      var img = document.createElement('img');
-      img.src = data.image;
-      img.alt = data.title;
-      img.decoding = 'async';
-      img.className = 'term-card-img';
-
-      if (preloadedImages[key] === true) {
-        img.classList.add('loaded');
-        imgContainer.innerHTML = '';
-        imgContainer.appendChild(img);
-      } else {
-        img.onload = function() {
-          img.classList.add('loaded');
-          imgContainer.innerHTML = '';
-          imgContainer.appendChild(img);
-          preloadedImages[key] = true;
-        };
-        img.onerror = function() {
-          imgContainer.style.display = 'none';
-          preloadedImages[key] = false;
-        };
-      }
-    } else {
-      imgContainer.style.display = 'none';
-      imgContainer.innerHTML = '<div class="term-card-skeleton"></div>';
-    }
+    renderMeanings(data.meanings, data.title);
 
     termCard.classList.add('visible');
 
     var rect = triggerEl.getBoundingClientRect();
-    var cardWidth = 320;
+    var cardWidth = 340;
     var left = rect.left + window.scrollX;
     var top = rect.bottom + window.scrollY + 10;
 

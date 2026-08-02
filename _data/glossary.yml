@@ -1,47 +1,85 @@
 palindrome:
   title: "Palindrome"
-  definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palíndromos' meaning 'running back again'."
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ambigram_palindrome_%CE%9D%CE%99%CE%A8%CE%9F%CE%9D%CE%91%CE%9D%CE%9F%CE%9C%CE%97%CE%9C%CE%91%CE%A4%CE%91%CE%9C%CE%97%CE%9C%CE%9F%CE%9D%CE%91%CE%9D%CE%9F%CE%A8%CE%99%CE%9D_%28Wash_your_sins%2C_not_only_your_face%2C_in_Greek%29.jpg/960px-Ambigram_palindrome_%CE%9D%CE%99%CE%A8%CE%9F%CE%9D%CE%91%CE%9D%CE%9F%CE%9C%CE%97%CE%9C%CE%91%CE%A4%CE%91%CE%9C%CE%97%CE%9C%CE%9F%CE%9D%CE%91%CE%9D%CE%9F%CE%A8%CE%99%CE%9D_%28Wash_your_sins%2C_not_only_your_face%2C_in_Greek%29.jpg"
+  meanings:
+    - context: "Linguistics"
+      definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palíndromos' meaning 'running back again'."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Palindrome.svg/320px-Palindrome.svg.png"
 
 reflectional_symmetry:
   title: "Reflectional Symmetry"
-  definition: "A property where one half of an object is the mirror image of the other half across a central axis. Also called line symmetry or mirror symmetry."
-  image: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Symmetry.png"
+  meanings:
+    - context: "Geometry"
+      definition: "A property where one half of an object is the mirror image of the other half across a central axis. Also called line symmetry or mirror symmetry."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Reflection_symmetry.svg/320px-Reflection_symmetry.svg.png"
 
 decimal:
   title: "Decimal System"
-  definition: "The base-10 numeral system that uses ten digits (0–9). It is the standard system for denoting integer and non-integer numbers."
-  image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Decimal_digit.png"
+  meanings:
+    - context: "Mathematics"
+      definition: "The base-10 numeral system that uses ten digits (0–9). It is the standard system for denoting integer and non-integer numbers."
 
 natural_numbers:
   title: "Natural Numbers"
-  definition: "The set of positive integers used for counting and ordering: {1, 2, 3, ...}. Sometimes includes 0 depending on the definition."
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Three_Baskets_with_Apples.svg/960px-Three_Baskets_with_Apples.svg.png"
+  meanings:
+    - context: "Mathematics"
+      definition: "The set of positive integers used for counting and ordering: {1, 2, 3, ...}. Sometimes includes 0 depending on the definition."
 
 numeral_system:
   title: "Numeral System"
-  definition: "A writing system for expressing numbers using digits or other symbols in a consistent manner. Examples include decimal (base-10), binary (base-2), and hexadecimal (base-16)."
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Numeral_Systems_of_the_World.svg/960px-Numeral_Systems_of_the_World.svg.png"
+  meanings:
+    - context: "Mathematics"
+      definition: "A writing system for expressing numbers using digits or other symbols in a consistent manner. Examples include decimal (base-10), binary (base-2), and hexadecimal (base-16)."
 
 matrix_multiplication:
   title: "Matrix Multiplication"
-  definition: "A binary operation that produces a matrix from two matrices. For A (m×k) and B (k×n), the product C = AB is an m×n matrix where each element cij = Σk aik·bkj."
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Matrix_multiplication_qtl1.svg/500px-Matrix_multiplication_qtl1.svg.png"
+  meanings:
+    - context: "Linear Algebra"
+      definition: "A binary operation that produces a matrix from two matrices. For A (m×k) and B (k×n), the product C = AB is an m×n matrix where each element cᵢⱼ = Σₖ aᵢₖ·bₖⱼ."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Matrix_multiplication_diagram.svg/320px-Matrix_multiplication_diagram.svg.png"
 
 dot_product:
   title: "Dot Product"
-  definition: "An algebraic operation that takes two equal-length sequences of numbers and returns a single number by multiplying corresponding entries and summing the products."
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Inner-product-angle.svg/500px-Inner-product-angle.svg.png"
+  meanings:
+    - context: "Linear Algebra"
+      definition: "An algebraic operation that takes two equal-length sequences of numbers and returns a single number by multiplying corresponding entries and summing the products."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Dot_Product.svg/320px-Dot_Product.svg.png"
 
 pointer:
   title: "Pointer"
-  definition: "A programming language object that stores a memory address. In C, a pointer is a variable whose value is the address of another variable, enabling direct memory manipulation."
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Pointers.svg/500px-Pointers.svg.png"
+  meanings:
+    - context: "Computer Science"
+      definition: "A programming language object that stores a memory address. In C, a pointer is a variable whose value is the address of another variable, enabling direct memory manipulation."
 
 macro:
   title: "Macro"
-  definition: "A fragment of code that has been given a name. In C, #define creates preprocessor macros that are textually replaced before compilation, unlike functions which are called at runtime."
+  meanings:
+    - context: "Computer Science"
+      definition: "A fragment of code that has been given a name. In C, #define creates preprocessor macros that are textually replaced before compilation, unlike functions which are called at runtime."
 
 algorithm:
   title: "Algorithm"
-  definition: "A finite sequence of well-defined instructions to solve a specific problem or perform a computation. The word comes from the 9th-century mathematician Al-Khwarizmi."
+  meanings:
+    - context: "Computer Science"
+      definition: "A finite sequence of well-defined instructions to solve a specific problem or perform a computation. The word comes from the 9th-century mathematician Al-Khwarizmi."
+
+rotor:
+  title: "Rotor"
+  meanings:
+    - context: "Linguistics"
+      definition: "A palindrome word that reads the same backward as forward: r-o-t-o-r."
+    - context: "Engineering"
+      definition: "A rotating part of an electrical machine or mechanical device, such as in a motor, generator, or helicopter."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Helicopter_rotor.jpg/320px-Helicopter_rotor.jpg"
+
+sequence:
+  title: "Sequence"
+  meanings:
+    - context: "Mathematics"
+    - definition: "In mathematics, an integer sequence is a sequence of integer."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Goteborg_ciag_Fibonacciego.jpg/500px-Goteborg_ciag_Fibonacciego.jpg"
+
+recurence:
+  title: "Recurrence relation"
+  meanings:
+    - context: "Mathematics"
+    - definiton: "A recurrence relation is an equation that expresses each element of a sequence as a function of its preceding elements. It defines the term based on previous terms"
