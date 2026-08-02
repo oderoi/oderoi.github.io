@@ -83,7 +83,7 @@ The overflow-safe midpoint formula `start + (end - start) / 2` is critical. The 
 Here is the iterative implementation — the version you should use in production:
 
 ```c
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 // Binary search function
 // Returns the index of target if found, -1 otherwise

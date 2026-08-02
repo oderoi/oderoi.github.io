@@ -55,8 +55,8 @@ The dimension rule ($A_{cols} = B_{rows}$) exists because the {% include term.ht
 Here is a clean implementation with proper memory management:
 
 ```c
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+#include <stdio.h>;
+#include <stdlib.h>;
 
 /*
  * Matrix Multiplication in C

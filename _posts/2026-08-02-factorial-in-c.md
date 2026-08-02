@@ -60,7 +60,7 @@ This pattern — **divide, recurse, combine** — appears in merge sort, quickso
 Here's a clean recursive implementation:
 
 ```c
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 // Function declaration
 double factorial(double n);
