@@ -1139,3 +1139,33 @@ a:hover {
     text-decoration: underline;
   }
 }
+
+/* ============================================
+   TERM CARD IMAGE
+   ============================================ */
+.term-card-image {
+  display: none;
+  width: 100%;
+  max-height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.term-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* When image is present, adjust body padding */
+.term-card-image + .term-card-body {
+  padding-top: 12px;
+}
+
+@media (max-width: 480px) {
+  .term-card-image {
+    max-height: 160px;
+  }
+}

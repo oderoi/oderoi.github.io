@@ -1,10 +1,12 @@
 palindrome:
   title: "Palindrome"
   definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palíndromos' meaning 'running back again'."
+  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Palindrome.svg/320px-Palindrome.svg.png"
 
 reflectional_symmetry:
   title: "Reflectional Symmetry"
   definition: "A property where one half of an object is the mirror image of the other half across a central axis. Also called line symmetry or mirror symmetry."
+  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Reflection_symmetry.svg/320px-Reflection_symmetry.svg.png"
 
 decimal:
   title: "Decimal System"
@@ -21,10 +23,12 @@ numeral_system:
 matrix_multiplication:
   title: "Matrix Multiplication"
   definition: "A binary operation that produces a matrix from two matrices. For A (m×k) and B (k×n), the product C = AB is an m×n matrix where each element cij = Σk aik·bkj."
+  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Matrix_multiplication_diagram.svg/320px-Matrix_multiplication_diagram.svg.png"
 
 dot_product:
   title: "Dot Product"
   definition: "An algebraic operation that takes two equal-length sequences of numbers and returns a single number by multiplying corresponding entries and summing the products."
+  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Dot_Product.svg/320px-Dot_Product.svg.png"
 
 pointer:
   title: "Pointer"

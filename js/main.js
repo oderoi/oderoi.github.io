@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '<strong id="term-card-title"></strong>' +
         '<button class="term-card-close" aria-label="Close">×</button>' +
       '</div>' +
+      '<div class="term-card-image" id="term-card-image"></div>' +
       '<div class="term-card-body" id="term-card-body"></div>' +
     '</div>';
   document.body.appendChild(termCard);
@@ -199,6 +200,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('term-card-title').textContent = data.title;
     document.getElementById('term-card-body').textContent = data.definition;
+
+    // Handle image
+    var imgContainer = document.getElementById('term-card-image');
+    if (data.image && data.image !== '') {
+      imgContainer.innerHTML = '<img src="' + data.image + '" alt="' + data.title + '" loading="lazy">';
+      imgContainer.style.display = 'block';
+    } else {
+      imgContainer.innerHTML = '';
+      imgContainer.style.display = 'none';
+    }
+
     termCard.classList.add('visible');
 
     var rect = triggerEl.getBoundingClientRect();
