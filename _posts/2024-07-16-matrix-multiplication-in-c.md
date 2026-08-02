@@ -1,11 +1,3 @@
-
----
-
-## 7. Update `_posts/2024-07-16-matrix-multiplication-in-c.md`
-
-Replace the entire file:
-
-```markdown
 ---
 layout: post
 title: "Matrix multiplication in C"
@@ -39,6 +31,7 @@ $B \in \mathbb{R}^{k \times n}  ==   B \in \mathbb{R}^{rowB \times colB}$
 
 $Code$
 
+{% raw %}
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,7 +39,7 @@ $Code$
 /*
 Contant definition.
 
-Here we use #define for the fan fact that it behave as {% include term.html name="macro" text="macros" %} whose value are subtituted at
+Here we use #define for the fan fact that it behave as macros whose value are subtituted at
 run-time.
 --------
 Here we have the value size of rows and columns of matrix A[rowA][colA] and B[rowB][colB].
@@ -91,7 +84,7 @@ int main(){
                     {1,2,3,4},
                     {1,2,3,4}};
 
-    //Calling of dot_product() function and initialize it to a {% include term.html name="pointer" text="pointer" %} variable int **mult
+    //Calling of dot_product() function and initialize it to a pointer variable int **mult
     int **mult=dot_product(A,B);
 
     //This is nested for-loop for printing the result matrix C[rowA][colB]
