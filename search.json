@@ -10,5 +10,4 @@ layout: none
     "excerpt": {{ post.excerpt | strip_html | truncate: 280 | jsonify }}
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
-}
 ]

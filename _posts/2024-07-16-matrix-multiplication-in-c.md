@@ -15,23 +15,24 @@ $C += A . B$
 
 $1D Array.$
 
-$C_{i} = \sum\limits_{i = 0}^{n} (A_{i} . B_{i}) = A_{1}B_{1} + A_{2}B_{2} + ...+ A_{n}B_{n}$
+$$C_{i} = \sum\limits_{i = 0}^{n} (A_{i} . B_{i}) = A_{1}B_{1} + A_{2}B_{2} + ...+ A_{n}B_{n}$$
 
 $2D Array.$
 
-$C_{i , j} = \sum\limits_{k \in [0 ... K) } (A_{i , k} . B_{k , j})$
+$$C_{i , j} = \sum\limits_{k \in [0 ... K) } (A_{i , k} . B_{k , j})$$
 
-$C_{i , j} = A_{i , k} . B_{k , j}$
+$$C_{i , j} = A_{i , k} . B_{k , j}$$
 
 Consider
 
-$A \in \mathbb{R}^{m \times k}  ==   A \in \mathbb{R}^{rowA \times colA}$
+$$A \in \mathbb{R}^{m \times k}  ==   A \in \mathbb{R}^{rowA \times colA}$$
 
-$B \in \mathbb{R}^{k \times n}  ==   B \in \mathbb{R}^{rowB \times colB}$
+$$B \in \mathbb{R}^{k \times n}  ==   B \in \mathbb{R}^{rowB \times colB}$$
 
-$Code$
+Code:
 
-{% highlight c %}
+{% raw %}
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -134,6 +135,4 @@ int** dot_product (int A[][colA], int B[][colB]){
     }
     return mult;
 }
-{% endhighlight %}
-
-![matrix multiplication](images/dot.png)
+```
