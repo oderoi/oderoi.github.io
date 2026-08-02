@@ -87,3 +87,117 @@ recurrence:
   meanings:
     - context: "Mathematics"
       definition: "A recurrence relation is an equation that expresses each element of a sequence as a function of its preceding elements. It defines the term based on previous terms"
+
+factorial:
+  title: "Factorial"
+  meanings:
+    - context: "Mathematics"
+      definition: "The product of all positive integers up to a given number n, written as n!. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120. By definition, 0! = 1."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Factorial_plot.svg/320px-Factorial_plot.svg.png"
+
+recursion:
+  title: "Recursion"
+  meanings:
+    - context: "Computer Science"
+      definition: "A programming technique where a function calls itself to solve smaller instances of the same problem. Every recursive function needs a base case to stop the infinite loop."
+    - context: "Mathematics"
+      definition: "A method of defining sequences or functions where each term is defined in terms of previous terms. Factorial is defined recursively: n! = n × (n-1)!."
+
+base_case:
+  title: "Base Case"
+  meanings:
+    - context: "Computer Science"
+      definition: "The condition in a recursive function that stops further recursive calls. Without a base case, recursion would continue infinitely and cause a stack overflow."
+
+stack_overflow:
+  title: "Stack Overflow"
+  meanings:
+    - context: "Computer Science"
+      definition: "An error that occurs when a program uses more memory than the call stack can hold. Common cause: infinite recursion or deeply nested function calls."
+
+search_algorithm:
+  title: "Search Algorithm"
+  meanings:
+    - context: "Computer Science"
+      definition: "An algorithm designed to find specific data within a data structure. Examples include linear search, binary search, and hash-based search."
+
+binary_search:
+  title: "Binary Search"
+  meanings:
+    - context: "Computer Science"
+      definition: "An efficient search algorithm that finds a target value in a sorted array by repeatedly dividing the search interval in half. Time complexity: O(log n)."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Binary_Search_Depiction.svg/500px-Binary_Search_Depiction.svg.png"
+
+sorted_array:
+  title: "Sorted Array"
+  meanings:
+    - context: "Computer Science"
+      definition: "An array where elements are arranged in a specific order (ascending or descending). Binary search requires a sorted array to work correctly."
+
+time_complexity:
+  title: "Time Complexity"
+  meanings:
+    - context: "Computer Science"
+      definition: "A measure of the amount of time an algorithm takes to complete as a function of the input size. Common notations: O(1), O(log n), O(n), O(n²)."
+
+logarithm:
+  title: "Logarithm"
+  meanings:
+    - context: "Mathematics"
+      definition: "The inverse operation to exponentiation. log₂(n) answers: 'How many times must we divide n by 2 to get 1?' Binary search runs in O(log n) time because it halves the problem each step."
+    - context: "Computer Science"
+      definition: "In algorithm analysis, log n describes algorithms that divide the problem in half each iteration. Extremely efficient for large datasets."
+
+iteration:
+  title: "Iteration"
+  meanings:
+    - context: "Computer Science"
+      definition: "The repetition of a process or set of instructions in a program. Can be implemented using loops (for, while) or recursion."
+
+for_loop:
+  title: "For Loop"
+  meanings:
+    - context: "Computer Science"
+      definition: "A control flow statement that allows code to be executed repeatedly based on a boolean condition. Typically used when the number of iterations is known beforehand."
+
+sequential_search:
+  title: "Sequential Search"
+  meanings:
+    - context: "Computer Science"
+      definition: "Also called linear search. Checks each element in a list one by one until the target is found. Simple but slow: O(n) time complexity."
+
+midpoint:
+  title: "Midpoint"
+  meanings:
+    - context: "Mathematics"
+      definition: "The middle point of a line segment or interval. In binary search, the midpoint divides the array into two halves to decide which half contains the target."
+
+divide_and_conquer:
+  title: "Divide and Conquer"
+  meanings:
+    - context: "Computer Science"
+      definition: "An algorithm design paradigm that breaks a problem into smaller sub-problems, solves each sub-problem independently, and combines their solutions. Binary search is the simplest divide-and-conquer algorithm."
+
+non_negative_integer:
+  title: "Non-negative Integer"
+  meanings:
+    - context: "Mathematics"
+      definition: "An integer that is greater than or equal to zero: {0, 1, 2, 3, ...}. Factorial is only defined for non-negative integers."
+
+product:
+  title: "Product"
+  meanings:
+    - context: "Mathematics"
+      definition: "The result of multiplying two or more numbers together. The factorial of n is the product of all positive integers from 1 to n."
+
+exponentiation:
+  title: "Exponentiation"
+  meanings:
+    - context: "Mathematics"
+      definition: "The operation of raising a number (the base) to the power of another number (the exponent). For example, 2³ = 2 × 2 × 2 = 8. The inverse is the logarithm."
+
+call_stack:
+  title: "Call Stack"
+  meanings:
+    - context: "Computer Science"
+      definition: "A data structure that stores information about active function calls. When a function calls itself (recursion), a new frame is pushed onto the stack. When the function returns, the frame is popped off."
