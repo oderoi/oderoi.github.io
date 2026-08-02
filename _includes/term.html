@@ -1,3 +1,2 @@
-{% assign term_data = site.data.glossary[include.name] %}
-{% assign display = include.text | default: term_data.title | default: include.name %}
-<span class="term" data-term="{{ include.name }}">{{ display }}</span>
+{%- assign term_data = site.data.glossary[include.name] -%}
+{%- assign display = include.text | default: term_data.title | default: include.name -%}<span class="term" data-term="{{ include.name }}">{{ display }}</span>
