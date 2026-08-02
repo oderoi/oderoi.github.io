@@ -1,6 +1,6 @@
 palindrome:
   title: "Palindrome"
-  definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palíndromos' meaning 'running back again'."
+  definition: "A word, number, phrase, or sequence that reads the same forward and backward (e.g., 16461, rotor, tenet). Derived from Greek 'palindromos' meaning 'running back again'."
 
 reflectional_symmetry:
   title: "Reflectional Symmetry"
@@ -20,7 +20,7 @@ numeral_system:
 
 matrix_multiplication:
   title: "Matrix Multiplication"
-  definition: "A binary operation that produces a matrix from two matrices. For A (m×k) and B (k×n), the product C = AB is an m×n matrix where each element cᵢⱼ = Σₖ aᵢₖ·bₖⱼ."
+  definition: "A binary operation that produces a matrix from two matrices. For A (m×k) and B (k×n), the product C = AB is an m×n matrix where each element cij = Σk aik·bkj."
 
 dot_product:
   title: "Dot Product"
