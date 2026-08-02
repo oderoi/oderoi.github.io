@@ -3,7 +3,7 @@ layout: post
 title: "Matrix multiplication in C"
 date: 2024-07-16
 excerpt: "Matrix multiplication using C programming"
-categories: Math Algorithms using C
+categories: [C, Math]
 mathjax: true
 ---
 

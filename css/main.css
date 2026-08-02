@@ -1063,7 +1063,7 @@ a:hover {
 }
 
 /* ============================================
-   TERM CARD IMAGE
+   TERM CARD IMAGE FIXES
    ============================================ */
 .term-card-image {
   display: none;
@@ -1103,42 +1103,21 @@ a:hover {
   transition: opacity 0.3s ease;
 }
 
-.term-card-img.loaded,
-.term-card-image img:not(.term-card-img) {
+/* This selector MUST match for the fade-in to work */
+.term-card-img.loaded {
   opacity: 1;
 }
 
-/* When image is present, adjust body padding */
+/* Fallback: any direct img child is visible */
+.term-card-image img {
+  opacity: 1;
+}
+
 .term-card-image + .term-card-body {
   padding-top: 12px;
 }
 
-.term-card-body {
-  padding: clamp(12px, 2.5vw, 14px) clamp(14px, 3vw, 18px);
-  font-size: clamp(0.8125rem, 1.8vw, 0.875rem);
-  line-height: 1.65;
-  color: var(--text-secondary);
-}
-
 @media (max-width: 480px) {
-  #term-card {
-    position: fixed;
-    top: auto !important;
-    left: 50% !important;
-    bottom: 20px;
-    transform: translateX(-50%) translateY(10px);
-    width: calc(100vw - 32px);
-    max-width: 360px;
-  }
-
-  #term-card.visible {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .term-card-arrow {
-    display: none;
-  }
-
   .term-card-image {
     aspect-ratio: 16 / 10;
   }

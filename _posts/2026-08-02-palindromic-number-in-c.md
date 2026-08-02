@@ -2,6 +2,8 @@
 layout: post
 title: "Palindromic Number in C"
 date: 2026-08-02 03:49:00 +0300
+excerpt: "Palindromic Number using C programming"
+categories: [C, Math]
 mathjax: true
 ---
 

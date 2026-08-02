@@ -112,10 +112,10 @@ document.addEventListener('DOMContentLoaded', function() {
       selectedIndex = -1;
       return;
     }
+    // FIXED: removed p.content which doesn't exist in search.json
     var matches = posts.filter(function(p) {
       return p.title.toLowerCase().includes(q) ||
-             p.excerpt.toLowerCase().includes(q) ||
-             p.content.toLowerCase().includes(q);
+             p.excerpt.toLowerCase().includes(q);
     }).slice(0, 8);
     renderResults(matches, query);
   }
@@ -182,7 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function(r) { return r.json(); })
     .then(function(data) {
       Object.assign(glossary, data);
-      // Preload all glossary images in background
       Object.keys(data).forEach(function(key) {
         if (data[key].image) {
           var img = new Image();
@@ -216,9 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('term-card-title').textContent = data.title;
     document.getElementById('term-card-body').textContent = data.definition;
 
-    // Handle image with preloading
     var imgContainer = document.getElementById('term-card-image');
-    if (data.image && data.image !== '') {
+    if (data.image && data.image !== '' && data.image !== 'null') {
       imgContainer.style.display = 'block';
       imgContainer.innerHTML = '<div class="term-card-skeleton"></div>';
 
@@ -228,12 +226,13 @@ document.addEventListener('DOMContentLoaded', function() {
       img.decoding = 'async';
       img.className = 'term-card-img';
 
-      // If already preloaded, show immediately; otherwise fade in when loaded
       if (preloadedImages[key] === true) {
+        img.classList.add('loaded');
         imgContainer.innerHTML = '';
         imgContainer.appendChild(img);
       } else {
         img.onload = function() {
+          img.classList.add('loaded');
           imgContainer.innerHTML = '';
           imgContainer.appendChild(img);
           preloadedImages[key] = true;
