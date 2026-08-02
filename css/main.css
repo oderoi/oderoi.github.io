@@ -1112,8 +1112,8 @@ a:hover {
   position: relative;
   width: 100%;
   height: 180px;
-  min-height: 140px;
-  max-height: 200px;
+  min-height: 160px;
+  max-height: 220px;
   overflow: hidden;
   background: var(--code-bg);
   margin: 10px 0 0;
