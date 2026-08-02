@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: null
 title: "Matrix Multiplication in C — A Visual Guide"
 date: 2026-08-02 11:00:00 +0300
 mathjax: true
@@ -42,7 +42,7 @@ $$C_{i,j} = \sum_{k=0}^{K-1} A_{i,k} \times B_{k,j}$$
 
 ## The C Code
 
-{% highlight c %}
+```c
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 
@@ -131,7 +131,7 @@ int** multiply_matrices(int A[][COL_A], int B[][COL_B]) {
 
     return C;
 }
-{% endhighlight %}
+```
 
 ## Output
 Matrix A (3x2):
