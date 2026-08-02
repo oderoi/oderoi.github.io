@@ -176,9 +176,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // GLOSSARY TERM CARDS
   // ============================================
   var glossary = {};
+  var preloadedImages = {};
+
   fetch('/glossary.json')
     .then(function(r) { return r.json(); })
-    .then(function(data) { Object.assign(glossary, data); })
+    .then(function(data) {
+      Object.assign(glossary, data);
+      // Preload all glossary images in background
+      Object.keys(data).forEach(function(key) {
+        if (data[key].image) {
+          var img = new Image();
+          img.onload = function() { preloadedImages[key] = true; };
+          img.onerror = function() { preloadedImages[key] = false; };
+          img.src = data[key].image;
+        }
+      });
+    })
     .catch(function() {});
 
   var termCard = document.createElement('div');
@@ -189,7 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
         '<strong id="term-card-title"></strong>' +
         '<button class="term-card-close" aria-label="Close">×</button>' +
       '</div>' +
-      '<div class="term-card-image" id="term-card-image"></div>' +
+      '<div class="term-card-image" id="term-card-image">' +
+        '<div class="term-card-skeleton"></div>' +
+      '</div>' +
       '<div class="term-card-body" id="term-card-body"></div>' +
     '</div>';
   document.body.appendChild(termCard);
@@ -201,14 +216,36 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('term-card-title').textContent = data.title;
     document.getElementById('term-card-body').textContent = data.definition;
 
-    // Handle image
+    // Handle image with preloading
     var imgContainer = document.getElementById('term-card-image');
     if (data.image && data.image !== '') {
-      imgContainer.innerHTML = '<img src="' + data.image + '" alt="' + data.title + '" loading="lazy">';
       imgContainer.style.display = 'block';
+      imgContainer.innerHTML = '<div class="term-card-skeleton"></div>';
+
+      var img = document.createElement('img');
+      img.src = data.image;
+      img.alt = data.title;
+      img.decoding = 'async';
+      img.className = 'term-card-img';
+
+      // If already preloaded, show immediately; otherwise fade in when loaded
+      if (preloadedImages[key] === true) {
+        imgContainer.innerHTML = '';
+        imgContainer.appendChild(img);
+      } else {
+        img.onload = function() {
+          imgContainer.innerHTML = '';
+          imgContainer.appendChild(img);
+          preloadedImages[key] = true;
+        };
+        img.onerror = function() {
+          imgContainer.style.display = 'none';
+          preloadedImages[key] = false;
+        };
+      }
     } else {
-      imgContainer.innerHTML = '';
       imgContainer.style.display = 'none';
+      imgContainer.innerHTML = '<div class="term-card-skeleton"></div>';
     }
 
     termCard.classList.add('visible');
