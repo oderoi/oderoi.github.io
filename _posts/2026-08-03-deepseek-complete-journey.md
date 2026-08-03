@@ -2,7 +2,7 @@
 layout: post
 title: "DeepSeek: The Complete Journey — From Hedge Fund to Open-Source AI Pioneer"
 date: 2026-08-03 02:30:00 +0300
-excerpt: "A comprehensive, fact-checked educational guide to DeepSeek — the Chinese AI lab that trained frontier models for $5.6M and gave them away under MIT license. Every model, every innovation, explained."
+excerpt: "A comprehensive, fact-checked educational guide to DeepSeek — the Chinese AI lab that trained frontier models for $5.6M and gave them away under MIT license. Every model, every innovation, every line of custom software, explained."
 categories: [ai, machine-learning, open-source, education]
 mathjax: false
 ---
@@ -13,11 +13,11 @@ mathjax: false
 
 ## What Is DeepSeek?
 
-**DeepSeek** (full name: Hangzhou DeepSeek Artificial Intelligence Basic Technology Research Co., Ltd.) is a Chinese artificial intelligence company founded in July 2023 by **Liang Wenfeng**. It is owned and funded by **High-Flyer**, a quantitative {% include term.html name="hedge_fund" text="hedge fund" %} that Liang co-founded in 2015. The company is headquartered in Hangzhou, Zhejiang, China, and employs approximately 160 people as of 2025.
+**DeepSeek** (full name: Hangzhou DeepSeek Artificial Intelligence Basic Technology Research Co., Ltd.) is a Chinese {% include term.html name="artificial_intelligence" text="artificial intelligence" %} company founded in July 2023 by **{% include term.html name="liang_wenfeng" text="Liang Wenfeng" %}**. It is owned and funded by **{% include term.html name="high_flyer" text="High-Flyer" %}**, a quantitative {% include term.html name="hedge_fund" text="hedge fund" %} that Liang co-founded in 2015. The company is headquartered in {% include term.html name="hangzhou" text="Hangzhou" %}, {% include term.html name="zhejiang" text="Zhejiang" %}, {% include term.html name="china" text="China" %}, and employs approximately 160 people as of 2025.
 
-DeepSeek develops {% include term.html name="large_language_model" text="large language models" %} (LLMs) — {% include term.html name="neural_network" text="neural networks" %} trained on vast amounts of text to understand and generate human language. Unlike many AI labs backed by venture capital, DeepSeek operates with a research-first mindset. The company has stated it focuses on research and does not have immediate plans for commercialization. This posture allows it to release its models as **open weights** — meaning anyone can download and run them — under permissive licenses like the MIT License.
+DeepSeek develops {% include term.html name="large_language_model" text="large language models" %} (LLMs) — {% include term.html name="neural_network" text="neural networks" %} trained on vast amounts of text to understand and generate human language. Unlike many AI labs backed by {% include term.html name="venture_capital" text="venture capital" %}, DeepSeek operates with a research-first mindset. The company has stated it focuses on research and does not have immediate plans for commercialization. This posture allows it to release its models as **{% include term.html name="open_weight" text="open weights" %}** — meaning anyone can download and run them — under permissive licenses like the {% include term.html name="mit_license" text="MIT License" %}.
 
-> **Key Fact:** DeepSeek's V3 model was trained for approximately **$5.6 million** (2.788 million GPU hours on H800 chips), according to the company's technical report. This is significantly less than the estimated $100 million spent by OpenAI on GPT-4.
+> **Key Fact:** DeepSeek's V3 model was trained for approximately **$5.6 million** (2.788 million {% include term.html name="gpu" text="GPU" %} hours on {% include term.html name="h800" text="H800" %} chips), according to the company's technical report. This is significantly less than the estimated $100 million spent by {% include term.html name="openai" text="OpenAI" %} on {% include term.html name="gpt4" text="GPT-4" %}.
 
 ---
 
@@ -25,15 +25,15 @@ DeepSeek develops {% include term.html name="large_language_model" text="large l
 
 ### The Hedge Fund Roots (2015–2023)
 
-Before DeepSeek existed, there was **High-Flyer Capital**, a quantitative hedge fund founded by Liang Wenfeng in June 2015. High-Flyer began using GPU-dependent deep learning models for stock trading as early as October 2016. By the end of 2017, most of its trading was AI-driven.
+Before DeepSeek existed, there was **High-Flyer Capital**, a quantitative hedge fund founded by Liang Wenfeng in June 2015. High-Flyer began using GPU-dependent {% include term.html name="deep_learning" text="deep learning" %} models for {% include term.html name="stock_trading" text="stock trading" %} as early as October 2016. By the end of 2017, most of its trading was {% include term.html name="ai_driven" text="AI-driven" %}.
 
-In 2019, High-Flyer built its first computing cluster, **Fire-Flyer 1**, containing 1,100 GPUs. It was retired after 1.5 years. Then came **Fire-Flyer 2** in 2021, with a budget of 1 billion yuan. By 2022, this cluster had 5,000 Nvidia A100 GPUs.
+In 2019, High-Flyer built its first {% include term.html name="computing_cluster" text="computing cluster" %}, **Fire-Flyer 1**, containing 1,100 GPUs. It was retired after 1.5 years. Then came **Fire-Flyer 2** in 2021, with a budget of 1 billion yuan. By 2022, this cluster had 5,000 {% include term.html name="nvidia_a100" text="Nvidia A100" %} GPUs.
 
-A crucial detail: Liang reportedly acquired **10,000 Nvidia A100 GPUs** before the United States restricted chip sales to China in 2022. This early stockpile would later become the foundation for DeepSeek's {% include term.html name="training" text="training" %} infrastructure.
+A crucial detail: Liang reportedly acquired **10,000 Nvidia A100 GPUs** before the {% include term.html name="united_states" text="United States" %} restricted {% include term.html name="chip" text="chip" %} sales to China in 2022. This early stockpile would later become the foundation for DeepSeek's {% include term.html name="training" text="training" %} infrastructure.
 
 ### The Spin-Off (2023)
 
-On April 14, 2023, High-Flyer announced the launch of an artificial general intelligence (AGI) research lab. Two months later, on **July 17, 2023**, that lab was spun off into an independent company: **DeepSeek**.
+On April 14, 2023, High-Flyer announced the launch of an {% include term.html name="artificial_general_intelligence" text="Artificial General Intelligence" %} (AGI) research lab. Two months later, on **July 17, 2023**, that lab was spun off into an independent company: **DeepSeek**.
 
 Venture capital investors were initially reluctant to fund DeepSeek, believing it unlikely to generate a quick return. High-Flyer remained the principal investor and backer.
 
@@ -42,24 +42,24 @@ Venture capital investors were initially reluctant to fund DeepSeek, believing i
 ## The Model Timeline: Every Release, Explained
 
 ![DeepSeek Timeline](/assets/images/deepseek_timeline.gif)
-*Animated timeline of DeepSeek's model releases from November 2023 to July 2026. Click to view the full animation.*
+*Animated timeline of DeepSeek's {% include term.html name="model" text="model" %} releases from November 2023 to July 2026. Click to view the full animation.*
 
 ### Era 1: Foundations (November 2023)
 
-**DeepSeek Coder** (November 2, 2023) was DeepSeek's first public model. It came in sizes from 1.3 billion to 33 billion {% include term.html name="parameters" text="parameters" %}, trained on 1.8 trillion {% include term.html name="token" text="tokens" %} (87% source code). It supported 16,000-token {% include term.html name="context_window" text="context windows" %}. The architecture was based on Llama, a popular open-source model from Meta.
+**DeepSeek Coder** (November 2, 2023) was DeepSeek's first public model. It came in sizes from 1.3 billion to 33 billion {% include term.html name="parameters" text="parameters" %}, trained on 1.8 trillion {% include term.html name="token" text="tokens" %} (87% source code). It supported 16,000-token {% include term.html name="context_window" text="context windows" %}. The architecture was based on {% include term.html name="llama" text="Llama" %}, a popular {% include term.html name="open_source_model" text="open-source model" %} from Meta.
 
-**DeepSeek-LLM** (November 29, 2023) followed shortly after, with 7 billion and 67 billion parameter variants. The 67B base model reportedly outperformed Llama 2 70B in reasoning, coding, math, and Chinese comprehension. Both models were released under the DeepSeek License (open-weights with some usage restrictions).
+**DeepSeek-LLM** (November 29, 2023) followed shortly after, with 7 billion and 67 billion parameter variants. The 67B base model reportedly outperformed {% include term.html name="llama_2_70b" text="Llama 2 70B" %} in {% include term.html name="reasoning" text="reasoning" %}, {% include term.html name="coding" text="coding" %}, {% include term.html name="math" text="math" %}, and Chinese comprehension. Both models were released under the {% include term.html name="deepseek_license" text="DeepSeek License" %} (open-weights with some usage restrictions).
 
-> **What are parameters?** Think of parameters as the "knobs and dials" inside a neural network. More parameters generally mean more capacity to learn, but also more computational cost. DeepSeek Coder's 33B variant has 33 billion of these knobs.
+> **What are parameters?** Think of parameters as the "{% include term.html name="knobs" text="knobs" %} and {% include term.html name="dials" text="dials" %}" inside a neural network. More parameters generally mean more capacity to learn, but also more computational cost. DeepSeek Coder's 33B variant has 33 billion of these knobs.
 
 ### Era 2: Innovation Begins (2024)
 
 **DeepSeek-MoE** (January 2024) introduced a critical architectural innovation: **Shared + Routed Experts**.
 
-![Mixture of Experts Diagram](/assets/images/diagram_moe.png)
-*How {% include term.html name="mixture_of_experts" text="Mixture of Experts" %} works: Instead of using all parameters for every token, only relevant "experts" are activated.*
+![DeepSeek MoE and MLA Architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/DeepSeek_MoE_and_MLA_%28DeepSeek-V2%29.svg/960px-DeepSeek_MoE_and_MLA_%28DeepSeek-V2%29.svg.png)
+*The architecture of V2, showing both shared-routed {% include term.html name="mixture_of_experts" text="Mixture of Experts" %} and Multi-Head Latent Attention ({% include term.html name="mla" text="MLA" %}). Image from Wikipedia.*
 
-**What is MoE?** A standard neural network uses all its parameters for every input. A {% include term.html name="mixture_of_experts" text="Mixture of Experts" %} (MoE) model divides its parameters into many smaller "expert" networks. A "router" decides which experts to use for each input. DeepSeek's innovation was adding **shared experts** (always active, handling common tasks) alongside **routed experts** (activated on demand).
+**What is MoE?** A standard neural network uses all its parameters for every input. A {% include term.html name="mixture_of_experts" text="Mixture of Experts" %} (MoE) {% include term.html name="model" text="model" %} divides its parameters into many smaller "{% include term.html name="expert_network" text="expert" %}" networks. A "{% include term.html name="router" text="router" %}" decides which experts to use for each input. DeepSeek's innovation was adding **{% include term.html name="shared_expert" text="shared experts" %}** (always active, handling common tasks) alongside **{% include term.html name="routed_expert" text="routed experts" %}** (activated on demand).
 
 This matters because:
 - DeepSeek-MoE has **16 billion total parameters** but only activates **2.7 billion per token**
@@ -85,10 +85,13 @@ The price was also groundbreaking: **2 RMB per million output tokens**, making i
 
 Key technical achievements in V3:
 - **Multi-Token Prediction (MTP)**: Predicts multiple future tokens simultaneously, not just one
-- **FP8 Mixed Precision**: Custom 8-bit floating-point format for training, requiring specially written mathematical kernels
+- **FP8 Mixed Precision**: Custom {% include term.html name="8_bit" text="8-bit" %} floating-point format for training, requiring specially written mathematical kernels
 - **3FS (Fire-Flyer File System)**: A distributed file system designed for training workloads where data is never read twice
-- **hfreduce**: An asynchronous communication library that runs on CPU to avoid blocking GPU work
+- **hfreduce**: An asynchronous communication library that runs on {% include term.html name="cpu" text="CPU" %} to avoid blocking GPU work
 - **Expert models**: Domain-specific teacher models that generated high-quality synthetic training data
+
+![Multi-Token Prediction](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Multi-Token_Prediction_%28DeepSeek%29_01.svg/1280px-Multi-Token_Prediction_%28DeepSeek%29_01.svg.png)
+*Multi-Token Prediction: The main model predicts the next token, while auxiliary MTP modules predict future tokens (t+2, t+3) in parallel. Image from Wikipedia.*
 
 The total training cost was **$5.576 million** — pre-training ($5.328M), context extension ($0.24M), and fine-tuning ($0.01M).
 
@@ -102,6 +105,9 @@ R1's training pipeline was:
 3. Train R1-Zero using pure reinforcement learning (no human examples)
 4. {% include term.html name="distillation" text="Distill" %} R1-Zero's reasoning into smaller models (1.5B to 70B parameters)
 5. Final RL with rule-based and preference rewards
+
+![Mixed-Precision Training](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Mixed-precision_training_in_DeepSeek_V3.svg/1280px-Mixed-precision_training_in_DeepSeek_V3.svg.png)
+*Mixed-precision framework for V3: Forward pass uses FP8 (5E2M), attention inputs use E5M6, optimizer states use BF16, and master weights use FP32. Custom GEMM kernels were written because off-the-shelf libraries could not handle it. Image from Wikipedia.*
 
 R1 was released under the **MIT License**, making it free for commercial use. It surpassed ChatGPT as the #1 free app on the US iOS App Store by January 27, 2025. Nvidia's stock dropped 18% in response, losing approximately **$600 billion in market value** — the largest single-day decline for any company in US stock market history.
 
@@ -122,11 +128,76 @@ R1 was released under the **MIT License**, making it free for commercial use. It
 Key innovations:
 - **Compressed Sparse Attention + Hybrid Chunked Attention**
 - **Muon optimizer** (a new optimization algorithm)
-- Adopted by Huawei and Cambricon for their AI chips
+- Adopted by {% include term.html name="huawei" text="Huawei" %} and {% include term.html name="cambricon" text="Cambricon" %} for their AI chips
+
+![DeepSeek-V4 Architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Overall_architecture_of_DeepSeek-V4_series.svg/1280px-Overall_architecture_of_DeepSeek-V4_series.svg.png)
+*Overall architecture of the DeepSeek-V4 series, showing the embedding layer, transformer blocks with CSA/HCA (Compressed Sparse Attention / Hybrid Chunked Attention), DeepSeekMoE, and MTP modules. Image from Wikipedia.*
 
 **DSpark** (July 2026) is a {% include term.html name="speculative_decoding" text="speculative decoding" %} technique that makes inference 60–85% faster without retraining or changing outputs.
 
 **V4 Flash 0731** (July 31, 2026) is the current state-of-the-art, scoring **82.7% on Terminal-Bench 2.1** — beating even the 1.6T Pro model on agent tasks. It costs **$0.14 per million input tokens** and **$0.28 per million output tokens**.
+
+---
+
+## The Software Engineering That Made It Possible
+
+DeepSeek's breakthrough was not just architectural — it was **systems engineering at the lowest level**. Because US export restrictions limited DeepSeek to weaker, cheaper {% include term.html name="gpu" text="GPUs" %} (the {% include term.html name="h800" text="H800" %} is a cut-down version of the H100 with reduced interconnect bandwidth), the team had to squeeze every drop of performance from the hardware. They did not simply install Nvidia's software stack and press "train." They **rewrote the entire software layer**.
+
+### Custom File System: 3FS
+
+Standard file systems cache data aggressively because typical workloads read the same files repeatedly. AI training is the opposite: each batch of data is random and **never read twice**. Caching is not just useless — it wastes memory and CPU cycles.
+
+DeepSeek built **3FS (Fire-Flyer File System)**, a distributed parallel file system designed specifically for asynchronous random reads. It uses **Direct I/O** (bypassing the OS cache entirely) and **RDMA Read** for direct memory access between nodes. In training, data flows straight from storage to GPU without intermediate buffering.
+
+### Custom Communication: hfreduce
+
+Training large models requires synchronizing gradients across thousands of GPUs. The standard tool for this is Nvidia's **NCCL** (Nvidia Collective Communications Library). DeepSeek found NCCL too slow and blocking — it would stall GPU kernels while waiting for network operations.
+
+So they built **hfreduce**, their own asynchronous communication library. The key insight: run the communication on the **CPU**, not the GPU. While the CPU handles gradient all-reduce across the network, the GPU keeps computing. No blocking. No idle time.
+
+hfreduce uses a **dual-tree broadcast** topology (similar in structure to NCCL but optimized for DeepSeek's specific network layout) and is designed to replace NCCL for the all-reduce operations that dominate training time.
+
+### Parallelism Library: HaiScale DDP
+
+DeepSeek did not use PyTorch's built-in distributed data parallel. They built **HaiScale Distributed Data Parallel (DDP)**, a library that implements every form of parallelism:
+
+| Strategy | What It Does |
+|----------|-------------|
+| **Data Parallelism (DP)** | Split the batch across GPUs; each GPU processes different data |
+| **Pipeline Parallelism (PP)** | Split the model layers across GPUs; each GPU owns a slice of the network |
+| **Tensor Parallelism (TP)** | Split individual matrix operations across GPUs within the same layer |
+| **Expert Parallelism (EP)** | Split MoE experts across different GPUs |
+| **FSDP / ZeRO** | Shard optimizer states and gradients across GPUs to save memory |
+
+HaiScale handles all of these simultaneously, automatically routing data through the most efficient path.
+
+### FP8 Mixed Precision: Writing Their Own Math
+
+Most AI training uses 16-bit or 32-bit floating-point numbers. DeepSeek pushed this to **8-bit** — but existing libraries could not handle their custom formats.
+
+They defined three different number formats:
+- **5E2M** (5-bit exponent, 2-bit mantissa) for the forward pass
+- **E5M6** (5-bit exponent, 6-bit mantissa) for attention layer inputs
+- **BF16** for optimizer states
+- **FP32** for master weights
+
+Off-the-shelf GEMM (General Matrix Multiply) kernels from Nvidia's cuBLAS could not accumulate 8-bit numbers accurately. So DeepSeek **wrote their own GPU kernels** — low-level CUDA code that runs directly on the GPU's streaming multiprocessors. This is the software equivalent of building your own engine because the factory one does not fit your car.
+
+### Overlapping Computation and Communication
+
+The H800 has 132 Streaming Multiprocessors (SMs) per chip — the units that actually do computation. DeepSeek dedicated **20 of these 132 SMs exclusively to inter-GPU communication**, leaving 112 for math. This means the GPU talks to its neighbors *while* it is still crunching numbers. The communication is hidden behind the computation.
+
+### Dynamic Load Balancing
+
+In MoE models, some "experts" (specialized sub-networks) get called more often than others. This creates **hotspots** — certain GPUs get overloaded while others sit idle.
+
+DeepSeek's solution: **rearrange which physical machine hosts which expert every 10 minutes**. They also added auxiliary "load-balancing losses" to the training objective, penalizing the model if it overuses certain experts. This is like a smart traffic system that reroutes cars in real time to prevent jams.
+
+### The Result
+
+All of this custom software combined to produce a training cost of **$5.576 million** for a 671-billion-parameter model — on hardware that US labs would consider second-tier. DeepSeek did not just use the hardware. They **owned every layer of the stack** from file system to GPU kernel.
+
+> **Analogy:** Imagine you are given a budget sedan and told to race against Formula 1 cars. Instead of complaining, you strip the interior, rewrite the engine control software, invent a new fuel injection system, and optimize the aerodynamics in a wind tunnel you built yourself. That is what DeepSeek did — except the "car" is a supercomputer and the "race" is training a language model.
 
 ---
 

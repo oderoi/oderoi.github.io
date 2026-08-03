@@ -423,3 +423,247 @@ gpu:
     - context: "Computer Hardware"
       definition: "A specialized processor designed for parallel computation, originally for graphics rendering. Modern AI training and inference rely heavily on GPUs (especially Nvidia's H100/H800/A100) because neural network operations can be massively parallelized. DeepSeek trains on H800 GPUs, a restricted-export variant of the H100."
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/NVIDIA_Tesla_V100.jpg/640px-NVIDIA_Tesla_V100.jpg"
+
+artificial_intelligence:
+  title: "Artificial Intelligence (AI)"
+  meanings:
+    - context: "Computer Science"
+      definition: "The simulation of human intelligence processes by machines, especially computer systems. These processes include learning (acquiring information and rules for using it), reasoning (using rules to reach conclusions), and self-correction. DeepSeek is an AI company that develops large language models."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/500px-Colored_neural_network.svg.png"
+
+liang_wenfeng:
+  title: "Liang Wenfeng"
+  meanings:
+    - context: "Business"
+      definition: "Chinese entrepreneur and AI researcher, founder and CEO of DeepSeek. Previously co-founded High-Flyer, a quantitative hedge fund, in 2015. He holds an 84% stake in DeepSeek through shell corporations as of May 2024."
+
+high_flyer:
+  title: "High-Flyer"
+  meanings:
+    - context: "Finance"
+      definition: "A Chinese quantitative hedge fund co-founded by Liang Wenfeng in June 2015. High-Flyer began using GPU-dependent deep learning for stock trading in 2016 and became the principal investor and parent company of DeepSeek when it was spun off in July 2023."
+
+quantitative:
+  title: "Quantitative (Finance)"
+  meanings:
+    - context: "Finance"
+      definition: "An investment strategy that uses mathematical models, statistical analysis, and algorithms to make trading decisions. High-Flyer is a quantitative hedge fund that uses AI and deep learning to drive its trading strategies."
+
+hangzhou:
+  title: "Hangzhou"
+  meanings:
+    - context: "Geography"
+      definition: "The capital city of Zhejiang Province in eastern China. Known as a major technology hub, it is home to Alibaba and DeepSeek. DeepSeek's headquarters is located in Hangzhou."
+
+zhejiang:
+  title: "Zhejiang"
+  meanings:
+    - context: "Geography"
+      definition: "A province in eastern China known for its technology industry and entrepreneurial culture. Hangzhou, its capital, hosts major tech companies including DeepSeek and Alibaba."
+
+china:
+  title: "China"
+  meanings:
+    - context: "Geography"
+      definition: "The world's most populous country and second-largest economy. China has become a major player in artificial intelligence research, with companies like DeepSeek, Baidu, and Alibaba developing competitive large language models despite US chip export restrictions."
+
+venture_capital:
+  title: "Venture Capital"
+  meanings:
+    - context: "Finance"
+      definition: "A form of private equity financing provided by investors to startups and small businesses with long-term growth potential. DeepSeek notably did not rely on venture capital; its parent company High-Flyer provided funding after VC investors were reluctant to invest."
+
+open_weight:
+  title: "Open Weights"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A model release strategy where the trained parameters (weights) of a neural network are made publicly available for download, but the training data and code may remain private. DeepSeek releases open-weight models, allowing anyone to run them locally. This is less open than full open source."
+
+mit_license:
+  title: "MIT License"
+  meanings:
+    - context: "Software"
+      definition: "A permissive free software license originating at the Massachusetts Institute of Technology. It allows reuse, modification, and distribution for any purpose, including commercial use, with minimal restrictions. DeepSeek has released models under the MIT License since 2025."
+
+gpu:
+  title: "GPU (Graphics Processing Unit)"
+  meanings:
+    - context: "Computer Hardware"
+      definition: "A specialized processor designed for parallel computation, originally for graphics rendering. Modern AI training and inference rely heavily on GPUs because neural network operations can be massively parallelized. DeepSeek trains on Nvidia H800 GPUs, a restricted-export variant of the H100."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/NVIDIA_Tesla_V100.jpg/640px-NVIDIA_Tesla_V100.jpg"
+
+h800:
+  title: "Nvidia H800"
+  meanings:
+    - context: "Computer Hardware"
+      definition: "A restricted-export variant of Nvidia's H100 GPU, designed for the Chinese market with reduced interconnect bandwidth to comply with US export controls. DeepSeek trains its models on H800 GPUs, achieving competitive results despite using weaker hardware than US labs."
+
+openai:
+  title: "OpenAI"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "An American AI research laboratory founded in 2015, known for creating GPT (Generative Pre-trained Transformer) models and ChatGPT. OpenAI's GPT-4 reportedly cost approximately $100 million to train, compared to DeepSeek-V3's ~$5.6 million."
+
+gpt4:
+  title: "GPT-4"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "A large language model developed by OpenAI, released in March 2023. It is a multimodal model capable of accepting text and image inputs. OpenAI reportedly spent approximately $100 million training GPT-4, making DeepSeek-V3's $5.6M training cost a significant contrast."
+
+deep_learning:
+  title: "Deep Learning"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A subset of machine learning based on artificial neural networks with multiple layers (hence 'deep'). Deep learning powers modern AI systems including large language models, image recognition, and speech synthesis. High-Flyer began using deep learning for trading in 2016."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/500px-Colored_neural_network.svg.png"
+
+stock_trading:
+  title: "Stock Trading"
+  meanings:
+    - context: "Finance"
+      definition: "The buying and selling of shares in publicly traded companies. High-Flyer, DeepSeek's parent company, uses AI-driven quantitative models to automate stock trading decisions, having transitioned from CPU-based linear models to GPU-dependent deep learning in 2016."
+
+ai_driven:
+  title: "AI-Driven"
+  meanings:
+    - context: "Technology"
+      definition: "A system or process that uses artificial intelligence to make decisions or perform tasks with minimal human intervention. By the end of 2017, most of High-Flyer's trading was AI-driven, meaning algorithms rather than humans were making the trading decisions."
+
+computing_cluster:
+  title: "Computing Cluster"
+  meanings:
+    - context: "Computer Science"
+      definition: "A group of interconnected computers that work together as a single system. DeepSeek's parent company High-Flyer built Fire-Flyer 1 (1,100 GPUs) in 2019 and Fire-Flyer 2 (5,000 GPUs) in 2021. These clusters form the training infrastructure for DeepSeek's AI models."
+
+nvidia_a100:
+  title: "Nvidia A100"
+  meanings:
+    - context: "Computer Hardware"
+      definition: "A high-performance data center GPU released by Nvidia in 2020, designed for AI training and scientific computing. Liang Wenfeng reportedly acquired 10,000 A100 GPUs before US export restrictions limited their sale to China. Fire-Flyer 2 used 5,000 A100 GPUs."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/NVIDIA_Tesla_V100.jpg/640px-NVIDIA_Tesla_V100.jpg"
+
+chip:
+  title: "Semiconductor Chip"
+  meanings:
+    - context: "Computer Hardware"
+      definition: "An integrated circuit that performs computations. AI training relies on specialized chips (GPUs) from companies like Nvidia. The United States has imposed export restrictions on advanced AI chips to China, forcing companies like DeepSeek to innovate with less powerful hardware."
+
+united_states:
+  title: "United States"
+  meanings:
+    - context: "Geography"
+      definition: "A country in North America that has imposed export restrictions on advanced AI chips to China since 2022. These restrictions limited DeepSeek to weaker hardware (H800 instead of H100), which paradoxically drove the company to develop more efficient algorithms and software."
+
+artificial_general_intelligence:
+  title: "Artificial General Intelligence (AGI)"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "A hypothetical form of AI that possesses the ability to understand, learn, and apply knowledge across any intellectual task that a human can perform. It remains a theoretical goal. On April 14, 2023, High-Flyer announced an AGI research lab that would become DeepSeek."
+
+model:
+  title: "Model (Machine Learning)"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A trained neural network that has learned patterns from data and can make predictions or generate outputs. DeepSeek has released many models including Coder, LLM, V2, V3, R1, and V4. Each model is a file containing billions of learned parameters."
+
+llama:
+  title: "Llama"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "A family of large language models developed by Meta (formerly Facebook). Llama models are open-weight and have become a foundation for many subsequent models. DeepSeek's first models (Coder and LLM) were based on the Llama architecture before developing their own innovations."
+
+open_source_model:
+  title: "Open-Source Model"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A machine learning model whose architecture, weights, and often training code are publicly available under an open-source license. Llama is an open-weight model (not fully open source). DeepSeek's R1 and later models are released under the MIT License, a true open-source license."
+
+llama_2_70b:
+  title: "Llama 2 70B"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "A 70-billion-parameter large language model released by Meta in July 2023. DeepSeek-LLM 67B reportedly outperformed Llama 2 70B on reasoning, coding, math, and Chinese comprehension benchmarks when it was released in November 2023."
+
+reasoning:
+  title: "Reasoning (AI)"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "The ability of an AI model to perform step-by-step logical thinking to solve problems. Reasoning models like DeepSeek-R1 generate chains of thought before answering, making them more accurate for math, coding, and logic but slower for simple queries."
+
+coding:
+  title: "Coding (Programming)"
+  meanings:
+    - context: "Computer Science"
+      definition: "The process of writing instructions (code) for computers using programming languages. DeepSeek Coder was specifically trained on 87% source code. Coding benchmarks like HumanEval and SWE-bench measure an AI's ability to write and debug programs."
+
+math:
+  title: "Mathematics"
+  meanings:
+    - context: "Mathematics"
+      definition: "The abstract science of number, quantity, and space. AI models are evaluated on math benchmarks like GSM8K (grade school math) and MATH (competition-level problems). DeepSeek-Math and DeepSeek-R1 are particularly strong at mathematical reasoning."
+
+deepseek_license:
+  title: "DeepSeek License"
+  meanings:
+    - context: "Software"
+      definition: "A source-available license used by DeepSeek for its early models (Coder, LLM, MoE, Math, V2). It permits open and responsible downstream usage but is more restrictive than the MIT License. Since 2025, DeepSeek has switched to the MIT License for newer models."
+
+knobs:
+  title: "Knobs (Metaphor)"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A metaphorical term for the adjustable parameters in a neural network. Just as turning a knob on a machine changes its behavior, adjusting a parameter changes how the model processes information. A 33B model has 33 billion such 'knobs.'"
+
+dials:
+  title: "Dials (Metaphor)"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A metaphorical term for the adjustable parameters in a neural network, used alongside 'knobs' to describe the billions of internal values that the model learns during training. Together they represent the model's learned knowledge."
+
+expert_network:
+  title: "Expert Network"
+  meanings:
+    - context: "Deep Learning"
+      definition: "In a Mixture of Experts (MoE) model, an expert network is a specialized sub-network that handles specific types of inputs. DeepSeek's MoE architecture divides the model into many expert networks, with a router deciding which experts to activate for each token."
+
+router:
+  title: "Router (MoE)"
+  meanings:
+    - context: "Deep Learning"
+      definition: "A small neural network within a Mixture of Experts (MoE) architecture that decides which expert sub-networks to activate for each input token. The router computes a score for all experts and selects the top-K highest-scoring ones. DeepSeek's router also handles shared experts that are always active."
+
+shared_expert:
+  title: "Shared Expert"
+  meanings:
+    - context: "Deep Learning"
+      definition: "An expert sub-network in a Mixture of Experts model that is always activated for every input token, regardless of the router's decision. DeepSeek invented shared experts to handle common tasks (like basic grammar) while routed experts handle specialized tasks. This prevents expert collapse and improves efficiency."
+
+routed_expert:
+  title: "Routed Expert"
+  meanings:
+    - context: "Deep Learning"
+      definition: "An expert sub-network in a Mixture of Experts model that is dynamically selected by the router for each input token. Only a small subset of routed experts are activated per token, making the model computationally efficient despite having billions of total parameters."
+
+8_bit:
+  title: "8-Bit Floating Point"
+  meanings:
+    - context: "Computer Science"
+      definition: "A number format that uses 8 bits (1 byte) to represent a floating-point number. DeepSeek uses a custom 5E2M format (5-bit exponent, 2-bit mantissa) for training, which reduces memory usage and speeds up computation compared to standard 16-bit or 32-bit formats. This required writing custom GPU kernels."
+
+cpu:
+  title: "CPU (Central Processing Unit)"
+  meanings:
+    - context: "Computer Hardware"
+      definition: "The primary processor in a computer that executes instructions from software. DeepSeek's hfreduce library runs communication tasks on the CPU asynchronously, allowing GPUs to continue computation without being blocked by network operations."
+
+huawei:
+  title: "Huawei"
+  meanings:
+    - context: "Technology"
+      definition: "A Chinese multinational technology company that designs and manufactures telecommunications equipment, consumer electronics, and AI chips. DeepSeek-V4 has been adopted by Huawei and Cambricon for their Ascend and MLU chip platforms, enabling inference on non-Nvidia hardware."
+
+cambricon:
+  title: "Cambricon"
+  meanings:
+    - context: "Technology"
+      definition: "A Chinese semiconductor company that designs AI chips (MLU series) for data centers and edge devices. DeepSeek-V4 has been adopted by Cambricon, demonstrating that the model can run efficiently on Chinese-made AI hardware as an alternative to Nvidia GPUs."
