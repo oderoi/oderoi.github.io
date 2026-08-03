@@ -301,3 +301,125 @@ taylor_series:
   meanings:
     - context: "Mathematics"
       definition: "An infinite sum of terms expressed in terms of the derivatives of a function at a single point. Used to approximate functions like eˣ, sin(x), and cos(x) using factorials in the denominators."
+
+large_language_model:
+  title: "Large Language Model (LLM)"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "A type of neural network trained on vast amounts of text data to understand, generate, and reason with human language. Examples include GPT-4, Claude, and DeepSeek-V3. LLMs are the foundation of modern chatbots and AI assistants."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Transformer_architecture.png/640px-Transformer_architecture.png"
+
+parameters:
+  title: "Parameters"
+  meanings:
+    - context: "Machine Learning"
+      definition: "The internal variables (weights and biases) of a neural network that are learned during training. More parameters generally mean greater capacity to learn complex patterns, but also require more computation. A 7B parameter model has 7 billion of these variables."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Neural_network_example.svg/500px-Neural_network_example.svg.png"
+
+token:
+  title: "Token"
+  meanings:
+    - context: "Natural Language Processing"
+      definition: "A unit of text that a language model processes. Can be a word, part of a word, or punctuation. For example, 'unbelievable' might be split into 'un', 'believ', and 'able'. Pricing for AI APIs is typically measured in tokens processed."
+
+context_window:
+  title: "Context Window"
+  meanings:
+    - context: "Natural Language Processing"
+      definition: "The maximum number of tokens a language model can process in a single conversation or document. A 128K context window means the model can 'remember' roughly 96,000 words at once. DeepSeek-V4 supports 1 million tokens."
+
+training:
+  title: "Training (Machine Learning)"
+  meanings:
+    - context: "Machine Learning"
+      definition: "The process of teaching a neural network by feeding it large datasets and adjusting its parameters to minimize prediction errors. Training frontier AI models requires millions of GPU hours and costs millions of dollars."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gradient_descent.gif/440px-Gradient_descent.gif"
+
+inference:
+  title: "Inference"
+  meanings:
+    - context: "Machine Learning"
+      definition: "The process of using a trained model to make predictions or generate outputs. Unlike training, inference does not modify the model's parameters. It is what happens when you send a prompt to ChatGPT or DeepSeek and receive a response."
+
+neural_network:
+  title: "Neural Network"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "A computing system inspired by biological brains, composed of interconnected nodes (neurons) organized in layers. Deep learning uses multi-layer neural networks (hence 'deep') to learn hierarchical representations of data."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/500px-Colored_neural_network.svg.png"
+
+attention_mechanism:
+  title: "Attention Mechanism"
+  meanings:
+    - context: "Deep Learning"
+      definition: "A technique in neural networks that allows the model to focus on different parts of the input when producing each part of the output. In transformers, self-attention lets every token 'look at' every other token, enabling the model to understand relationships across long distances in text."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Transformer_architecture.png/640px-Transformer_architecture.png"
+
+kv_cache:
+  title: "KV Cache"
+  meanings:
+    - context: "Transformer Architecture"
+      definition: "Key-Value Cache. During inference in transformer models, the Key and Value matrices for previously processed tokens are stored and reused rather than recomputed. This speeds up generation but consumes significant memory. DeepSeek's MLA innovation compresses this cache dramatically."
+
+mixture_of_experts:
+  title: "Mixture of Experts (MoE)"
+  meanings:
+    - context: "Deep Learning"
+      definition: "A neural network architecture where only a subset of the model's parameters (called 'experts') are activated for each input token. A 'router' network decides which experts to use. This allows models to have massive total parameters while keeping inference costs manageable. DeepSeek innovated by adding 'shared experts' that are always active."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Transformer_architecture.png/640px-Transformer_architecture.png"
+
+reinforcement_learning:
+  title: "Reinforcement Learning (RL)"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A training paradigm where an agent learns to make decisions by receiving rewards or penalties from its environment. In AI, RLHF (Reinforcement Learning from Human Feedback) trains models to align with human preferences. DeepSeek's GRPO is a variant that eliminates the need for a separate critic model."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Reinforcement_learning_diagram.svg/500px-Reinforcement_learning_diagram.svg.png"
+
+reasoning_model:
+  title: "Reasoning Model"
+  meanings:
+    - context: "Artificial Intelligence"
+      definition: "A language model trained to generate step-by-step chains of thought before producing a final answer. Unlike standard models that answer directly, reasoning models 'show their work' — making them more accurate for math, coding, and logic but slower for simple queries. DeepSeek-R1 is a leading example."
+
+distillation:
+  title: "Model Distillation"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A technique where a smaller 'student' model is trained to mimic the behavior of a larger 'teacher' model. DeepSeek distilled R1's reasoning capabilities into models as small as 1.5B parameters, making advanced reasoning accessible on consumer hardware."
+
+benchmark:
+  title: "Benchmark"
+  meanings:
+    - context: "Machine Learning"
+      definition: "A standardized test used to evaluate and compare AI models. Common benchmarks include MMLU (general knowledge), HumanEval (coding), GSM8K (math), and SWE-bench (software engineering). Scores should be interpreted with caution — benchmarks do not capture all real-world capabilities."
+
+api:
+  title: "API (Application Programming Interface)"
+  meanings:
+    - context: "Software Engineering"
+      definition: "A set of protocols that allows different software applications to communicate. In AI, an API lets developers send text to a model and receive generated responses programmatically. DeepSeek's API is significantly cheaper than competitors — $0.14 per million input tokens for V4 Flash."
+
+open_source:
+  title: "Open Source"
+  meanings:
+    - context: "Software"
+      definition: "Software whose source code is made available under a license that permits anyone to use, study, change, and distribute it. DeepSeek releases models under the MIT License, one of the most permissive open-source licenses. Note: 'Open weights' (sharing trained model files) is not the same as full open source (sharing training code and data)."
+
+speculative_decoding:
+  title: "Speculative Decoding"
+  meanings:
+    - context: "Machine Learning"
+      definition: "An inference optimization technique where a smaller, faster 'draft' model generates candidate tokens, and a larger model verifies them in parallel. Correct tokens are accepted; incorrect ones are rejected and regenerated. DeepSeek's DSpark achieves 60–85% speedup with byte-identical outputs."
+
+hedge_fund:
+  title: "Hedge Fund"
+  meanings:
+    - context: "Finance"
+      definition: "An investment partnership that pools capital from accredited investors and employs diverse strategies to generate returns. High-Flyer, DeepSeek's parent company, is a quantitative hedge fund that uses AI and mathematical models for algorithmic trading."
+
+gpu:
+  title: "GPU (Graphics Processing Unit)"
+  meanings:
+    - context: "Computer Hardware"
+      definition: "A specialized processor designed for parallel computation, originally for graphics rendering. Modern AI training and inference rely heavily on GPUs (especially Nvidia's H100/H800/A100) because neural network operations can be massively parallelized. DeepSeek trains on H800 GPUs, a restricted-export variant of the H100."
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/NVIDIA_Tesla_V100.jpg/640px-NVIDIA_Tesla_V100.jpg"
