@@ -106,6 +106,9 @@ R1's training pipeline was:
 4. {% include term.html name="distillation" text="Distill" %} R1-Zero's reasoning into smaller models (1.5B to 70B parameters)
 5. Final RL with rule-based and preference rewards
 
+![DeepSeek-R1 Multistage Pipeline](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_multistage_pipeline_of_DeepSeek-R1.png/500px-The_multistage_pipeline_of_DeepSeek-R1.png)
+*The multistage training pipeline of DeepSeek-R1: V3-Base → Cold Start → R1-Zero (RL) → Distillation → R1 (final RL). Image from Wikipedia.*
+
 ![Mixed-Precision Training](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Mixed-precision_training_in_DeepSeek_V3.svg/1280px-Mixed-precision_training_in_DeepSeek_V3.svg.png)
 *Mixed-precision framework for V3: Forward pass uses FP8 (5E2M), attention inputs use E5M6, optimizer states use BF16, and master weights use FP32. Custom GEMM kernels were written because off-the-shelf libraries could not handle it. Image from Wikipedia.*
 
@@ -287,14 +290,14 @@ A: DeepSeek trains on Nvidia H800 GPUs (a restricted-export version of the H100)
 
 This article is based on the following verified sources:
 
-1. **Wikipedia — DeepSeek**: [https://en.wikipedia.org/wiki/DeepSeek](https://en.wikipedia.org/wiki/DeepSeek) — Company history, model specifications, and timeline.
-2. **DeepSeek-V3 Technical Report** (arXiv): Training costs, architecture details, and benchmark results.
-3. **DeepSeek API Documentation**: Official changelog confirming release dates and feature updates.
-4. **Timeline of DeepSeek** (timelines.issarice.com): Detailed chronological breakdown of events.
-5. **BentoML Guide to DeepSeek Models**: Technical comparison of V3, R1, and subsequent versions.
-6. **Sebastian Raschka's Technical Tour**: In-depth analysis of MLA, DSA, and training methodologies.
-7. **ADF Magazine**: Coverage of DeepSeek's expansion in Africa and associated privacy concerns.
-8. **Financial Times / Bloomberg**: Reporting on IPO preparations (July 2026) and funding rounds.
+1. **[Wikipedia — DeepSeek](https://en.wikipedia.org/wiki/DeepSeek)** — Comprehensive company history, model specifications, technical architecture diagrams, and full timeline with citations.
+2. **[DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437)** (arXiv, 2024) — Official paper detailing training costs ($5.576M), FP8 mixed precision, MTP, MLA architecture, and benchmark results. [GitHub mirror](https://github.com/deepseek-ai/DeepSeek-V3).
+3. **[DeepSeek API Documentation](https://api-docs.deepseek.com/)** — Official platform docs confirming model IDs, pricing, context windows, and API changelog including V4 GA and legacy deprecation dates.
+4. **[Timeline of DeepSeek](https://timelines.issarice.com/wiki/Timeline_of_DeepSeek)** (Issa Rice Wiki) — Detailed chronological breakdown of every model release, funding round, and market event from 2015 to 2025.
+5. **[BentoML: The Complete Guide to DeepSeek Models](https://www.bentoml.com/blog/the-complete-guide-to-deepseek-models-from-v3-to-r1-and-beyond)** (2026) — Technical comparison of V3, R1, V4, and deployment guidance for all variants.
+6. **[Sebastian Raschka: A Technical Tour of the DeepSeek Models](https://magazine.sebastianraschka.com/p/technical-deepseek)** (2025) — In-depth analysis of MLA, DSA, GRPO, and training methodologies from V3 through V3.2.
+7. **[Wikipedia: DeepSeek — Africa Expansion](https://en.wikipedia.org/wiki/DeepSeek)** — Coverage of DeepSeek's impact on African language models, Nairobi startups, and data sovereignty via Huawei Cloud. Originally sourced from ADF Magazine and other outlets.
+8. **[Bloomberg / Yahoo Finance: DeepSeek IPO Preparations](https://finance.yahoo.com/markets/stocks/articles/deepseek-begins-ipo-preparations-potential-165600707.html)** (July 2026) — Reporting on $71B valuation, $7B funding round, and planned 2027 IPO filing.
 
 > **Correction Policy:** If you find any factual errors in this article, please open an issue on this repository. Truth matters more than speed.
 
